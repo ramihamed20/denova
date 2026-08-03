@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#130824" />
+    <meta name="description" content="DENOVA — Dental Innovation Forum. A collaborative platform for the future of dentistry." />
+    <title>DENOVA — Dental Innovation Forum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300..900&family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-i18n="skip_link">Skip to content</a>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Site Header -->
+    <header class="site-header" data-header>
+      <a class="mini-brand" href="#top" aria-label="DENOVA home">
+        <span class="brand-mark brand-mark--small" aria-hidden="true">
+          <i></i><i></i><i></i><i></i>
+        </span>
+        <span>DENOVA</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#about" data-nav-link="about" data-i18n="header_about">About</a>
+        <a href="#ecosystem" data-nav-link="ecosystem" data-i18n="header_ecosystem">Ecosystem</a>
+        <a href="#conference" data-nav-link="conference" data-i18n="header_conference">Conference</a>
+        <a href="#community" data-nav-link="community" data-i18n="header_community">Community</a>
+      </nav>
+
+      <!-- Language Switcher Toggle -->
+      <div class="header-right">
+        <button class="lang-toggle" type="button" aria-label="Toggle language" data-lang-toggle>
+          <span class="lang-option lang-option--en is-active">EN</span>
+          <span class="lang-divider">|</span>
+          <span class="lang-option lang-option--ar">عربي</span>
+        </button>
+        <a class="nav-cta" href="#join" data-i18n="header_join">Join DENOVA <span aria-hidden="true">↗</span></a>
+      </div>
+
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="primary-mobile" aria-expanded="false" data-menu-toggle>
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+      </button>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav" id="primary-mobile" data-mobile-nav aria-label="Mobile navigation">
+      <div class="mobile-nav__header">
+        <span class="mini-brand">
+          <span class="brand-mark brand-mark--small" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span>DENOVA</span>
+        </span>
+        <button class="lang-toggle lang-toggle--mobile" type="button" aria-label="Toggle language" data-lang-toggle>
+          <span class="lang-option lang-option--en is-active">EN</span>
+          <span class="lang-divider">|</span>
+          <span class="lang-option lang-option--ar">عربي</span>
+        </button>
+      </div>
+      <div class="mobile-nav__links">
+        <a href="#about"><span data-i18n="header_about">About</span><small>01</small></a>
+        <a href="#ecosystem"><span data-i18n="header_ecosystem">Ecosystem</span><small>02</small></a>
+        <a href="#conference"><span data-i18n="header_conference">Conference</span><small>03</small></a>
+        <a href="#community"><span data-i18n="header_community">Community</span><small>04</small></a>
+        <a href="#join" class="mobile-nav__cta"><span data-i18n="header_join">Join DENOVA</span><span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="mobile-nav__footer">
+        <p data-i18n="mobile_footer">Dental Innovation Forum · Tripoli, Libya</p>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main">
+      <!-- Hero Section -->
+      <section class="hero" id="top" aria-labelledby="hero-heading">
+        <div class="hero-aurora" aria-hidden="true"></div>
+        <div class="hero-satellite hero-satellite--one" aria-hidden="true"></div>
+        <div class="hero-satellite hero-satellite--two" aria-hidden="true"></div>
+        <div class="hero-line hero-line--one" aria-hidden="true"></div>
+        <div class="hero-line hero-line--two" aria-hidden="true"></div>
+        <div class="page-width hero__content">
+          <div class="hero__identity" data-reveal>
+            <div class="official-logo-crop">
+              <img src="assets/denova-brand-board.png" alt="DENOVA — Dental Innovation Forum" />
+            </div>
+          </div>
+          <div class="hero__intro" data-reveal>
+            <h1 id="hero-heading" data-i18n="hero_title">Building the Future<br />of Dental Innovation</h1>
+            <p class="hero__copy" data-i18n="hero_copy">DENOVA is a collaborative platform connecting dental students, educators, professionals, researchers, and innovators to shape the future of dentistry through education, scientific events, and innovation.</p>
+            <div class="hero__actions">
+              <a class="button button--cyan" href="#about" data-i18n="hero_btn_explore">Explore DENOVA <span aria-hidden="true">↓</span></a>
+              <a class="button button--quiet" href="#join" data-i18n="hero_btn_join">Join the Community <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div class="hero__bottom" data-reveal>
+            <p data-i18n="hero_tagline">Innovate <i></i> Discover <i></i> Elevate</p>
+            <a href="#about" aria-label="Scroll to discover DENOVA"><span data-i18n="hero_scroll">Scroll to discover</span><b aria-hidden="true">↓</b></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="about section" id="about" aria-labelledby="about-heading">
+        <div class="page-width about__layout">
+          <div class="about__copy" data-reveal>
+            <p class="section-label" data-i18n="about_label">The platform</p>
+            <h2 id="about-heading" data-i18n="about_title">What is<br /><em>DENOVA?</em></h2>
+            <p class="body-copy" data-i18n="about_copy">A modern dental platform dedicated to education, collaboration, innovation, and scientific growth. DENOVA brings ambitious minds into one progressive space — where knowledge is exchanged, possibilities are examined, and better standards emerge.</p>
+            <a class="text-link" href="#ecosystem" data-i18n="about_link">Discover our ecosystem <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="about__visual" aria-label="Abstract illustration of connected innovation systems" data-reveal>
+            <div class="orbital-system">
+              <span class="orbit orbit--a"></span>
+              <span class="orbit orbit--b"></span>
+              <span class="orbit orbit--c"></span>
+              <span class="orbital-core"><b></b></span>
+              <span class="orbit-dot orbit-dot--a"></span>
+              <span class="orbit-dot orbit-dot--b"></span>
+              <span class="orbit-dot orbit-dot--c"></span>
+              <span class="orbit-dot orbit-dot--d"></span>
+            </div>
+            <p class="visual-note visual-note--a" data-i18n="about_note_a">Knowledge, in motion</p>
+            <p class="visual-note visual-note--b" data-i18n="about_note_b">Built for the next generation</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ecosystem Section -->
+      <section class="ecosystem section" id="ecosystem" aria-labelledby="ecosystem-heading">
+        <div class="page-width">
+          <div class="section-heading section-heading--wide" data-reveal>
+            <p class="section-label" data-i18n="ecosystem_label">A connected platform</p>
+            <h2 id="ecosystem-heading" data-i18n="ecosystem_title">One forum.<br />A living <em>ecosystem.</em></h2>
+            <p class="body-copy" data-i18n="ecosystem_copy">Every part of DENOVA is designed to strengthen the others. Select a node to explore the network.</p>
+          </div>
+
+          <!-- Mobile Node Switcher Tabs -->
+          <div class="ecosystem-mobile-tabs" data-reveal aria-label="Ecosystem categories">
+            <button class="eco-tab is-active" type="button" data-node-trigger="community"><span data-i18n="eco_tab_1">01 Community</span></button>
+            <button class="eco-tab" type="button" data-node-trigger="education"><span data-i18n="eco_tab_2">02 Education</span></button>
+            <button class="eco-tab" type="button" data-node-trigger="research"><span data-i18n="eco_tab_3">03 Research</span></button>
+            <button class="eco-tab" type="button" data-node-trigger="innovation"><span data-i18n="eco_tab_4">04 Innovation</span></button>
+            <button class="eco-tab" type="button" data-node-trigger="conference"><span data-i18n="eco_tab_5">05 Conference</span></button>
+            <button class="eco-tab" type="button" data-node-trigger="partnerships"><span data-i18n="eco_tab_6">06 Partnerships</span></button>
+          </div>
+
+          <div class="ecosystem__field" data-reveal>
+            <svg class="network-lines" viewBox="0 0 1000 620" role="presentation" aria-hidden="true">
+              <path d="M502 304 L170 144 M502 304 L477 70 M502 304 L825 143 M502 304 L858 430 M502 304 L510 550 M502 304 L144 456" />
+              <path d="M170 144 C295 40 641 24 825 143 M825 143 C948 234 931 354 858 430 M858 430 C713 577 628 586 510 550 M510 550 C301 591 184 540 144 456 M144 456 C65 340 86 231 170 144" />
+            </svg>
+            <button class="ecosystem-node ecosystem-node--community is-active" type="button" aria-pressed="true" data-node="community" style="--x:17%; --y:23%"><span>01</span><strong data-i18n="node_community">Community</strong></button>
+            <button class="ecosystem-node ecosystem-node--education" type="button" aria-pressed="false" data-node="education" style="--x:48%; --y:7%"><span>02</span><strong data-i18n="node_education">Education</strong></button>
+            <button class="ecosystem-node ecosystem-node--research" type="button" aria-pressed="false" data-node="research" style="--x:82%; --y:23%"><span>03</span><strong data-i18n="node_research">Research</strong></button>
+            <button class="ecosystem-node ecosystem-node--innovation" type="button" aria-pressed="false" data-node="innovation" style="--x:86%; --y:70%"><span>04</span><strong data-i18n="node_innovation">Innovation</strong></button>
+            <button class="ecosystem-node ecosystem-node--conference" type="button" aria-pressed="false" data-node="conference" style="--x:51%; --y:88%"><span>05</span><strong data-i18n="node_conference">Conference</strong></button>
+            <button class="ecosystem-node ecosystem-node--partnerships" type="button" aria-pressed="false" data-node="partnerships" style="--x:15%; --y:74%"><span>06</span><strong data-i18n="node_partnerships">Partnerships</strong></button>
+            
+            <div class="ecosystem-core" aria-label="DENOVA">
+              <span class="brand-mark brand-mark--core" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+              <strong>DENOVA</strong>
+              <small data-i18n="brand_subtitle">Dental Innovation Forum</small>
+            </div>
+            
+            <div class="node-reading" aria-live="polite" data-node-reading>
+              <span class="node-reading__index">01 / 06</span>
+              <h3 data-i18n="node_community">Community</h3>
+              <p data-i18n="node_desc_community">A shared ground for students, educators and professionals to exchange perspective and move the profession forward.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Supervision Section -->
+      <section class="supervision section" aria-labelledby="supervision-heading">
+        <div class="page-width supervision__layout">
+          <div class="supervision__seal-wrap" data-reveal>
+            <div class="supervision__seal">
+              <img src="assets/student-union.png" alt="Student Union of the Faculty of Dentistry, University of Tripoli" loading="lazy" decoding="async" />
+            </div>
+          </div>
+          <div class="supervision__copy" data-reveal>
+            <p class="section-label" data-i18n="supervision_label">Institutional foundation</p>
+            <h2 id="supervision-heading" data-i18n="supervision_title">Under the<br /><em>Supervision</em></h2>
+            <p class="body-copy" data-i18n="supervision_copy">Proudly supported by the Student Union of the Faculty of Dentistry, University of Tripoli — building a stronger environment for academic ambition and professional growth.</p>
+            <div class="signature-line"><span></span><p data-i18n="supervision_sig">Student Union · Faculty of Dentistry<br />University of Tripoli</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Partner Section -->
+      <section class="partner section" aria-labelledby="partner-heading">
+        <div class="page-width partner__card" data-reveal>
+          <div class="partner__content">
+            <p class="section-label" data-i18n="partner_label">Educational partner</p>
+            <h2 id="partner-heading" data-i18n="partner_title">Excellence<br /><em>Academy</em></h2>
+            <p class="body-copy" data-i18n="partner_copy">A trusted educational partner supporting high-quality learning experiences and the scientific development of the DENOVA community.</p>
+            <a class="text-link text-link--light" href="#join" data-i18n="partner_link">Meet our partners <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="partner__identity">
+            <div class="partner__logo-frame">
+              <img src="assets/excellence-academy.png" alt="Excellence Academy" loading="lazy" decoding="async" />
+            </div>
+            <p><span data-i18n="partner_role">Educational Partner</span><br /><b data-i18n="partner_name">Excellence Academy</b></p>
+          </div>
+          <div class="partner__glow" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <!-- Conference Section -->
+      <section class="conference section" id="conference" aria-labelledby="conference-heading">
+        <div class="page-width conference__top" data-reveal>
+          <div>
+            <p class="section-label" data-i18n="conference_label">A defining annual gathering</p>
+            <h2 id="conference-heading" data-i18n="conference_title">DENOVA Annual<br /><em>Conference</em></h2>
+          </div>
+          <p class="conference__date" data-i18n="conference_date">Held every <span>September</span><br /><small>Tripoli, Libya · Global perspective</small></p>
+        </div>
+        <div class="page-width conference__stage" data-reveal>
+          <div class="conference__art" aria-label="Abstract conference illustration">
+            <div class="conference-ring conference-ring--outer"></div>
+            <div class="conference-ring conference-ring--middle"></div>
+            <div class="conference-ring conference-ring--inner"></div>
+            <span class="conference-beam conference-beam--one"></span>
+            <span class="conference-beam conference-beam--two"></span>
+            <span class="conference-beam conference-beam--three"></span>
+            <div class="conference-mark"><span class="brand-mark brand-mark--conference" aria-hidden="true"><i></i><i></i><i></i><i></i></span></div>
+            <p>DENOVA<br />2026</p>
+          </div>
+          <div class="conference__details">
+            <p class="conference__context" data-i18n="conference_context">A full-spectrum scientific experience: visionary speakers, research exchange, advanced workshops, and new relationships across the dental world.</p>
+            <div class="countdown" aria-label="Conference countdown">
+              <p><span data-i18n="conference_countdown">Conference countdown</span> <span class="countdown-badge" data-i18n="sept_2026">September 2026</span></p>
+              <div class="countdown__cells" data-countdown>
+                <b data-cd-days>031 <small data-i18n="cd_days">Days</small></b><i></i>
+                <b data-cd-hours>09 <small data-i18n="cd_hours">Hours</small></b><i></i>
+                <b data-cd-mins>42 <small data-i18n="cd_mins">Mins</small></b><i></i>
+                <b data-cd-secs>00 <small data-i18n="cd_secs">Secs</small></b>
+              </div>
+            </div>
+            <div class="conference__actions">
+              <a class="button button--gold" href="#about" data-i18n="conference_learn">Learn More <span aria-hidden="true">↗</span></a>
+              <button class="button button--outline" type="button" data-modal-target="modal-register" data-i18n="conference_register">Register Now <span aria-hidden="true">→</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Clinical Community Section -->
+      <section class="clinical section" id="community" aria-labelledby="clinical-heading">
+        <div class="page-width clinical__intro" data-reveal>
+          <div>
+            <p class="section-label" data-i18n="clinical_label">Clinical Community</p>
+            <h2 id="clinical-heading" data-i18n="clinical_title">Learn from real<br /><em>discussions.</em></h2>
+          </div>
+          <div>
+            <p class="body-copy" data-i18n="clinical_copy">A refined scientific space to publish clinical cases, ask sharper questions, discuss treatment plans, and learn directly from peers and experts.</p>
+            <a href="#join" class="text-link" data-i18n="clinical_visit">Visit Clinical Community <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <div class="page-width clinical__workspace" data-reveal>
+          <div class="workspace__rail">
+            <span class="workspace__brand"><span class="brand-mark brand-mark--tiny"><i></i><i></i><i></i><i></i></span> DENOVA / Clinical</span>
+            <button class="workspace__rail-link is-current" type="button" data-category-filter="all"><i></i><span data-i18n="cat_all">All cases</span> <b>24</b></button>
+            <button class="workspace__rail-link" type="button" data-category-filter="endodontics"><i></i><span data-i18n="cat_endo">Endodontics</span> <b>08</b></button>
+            <button class="workspace__rail-link" type="button" data-category-filter="oral-surgery"><i></i><span data-i18n="cat_surgery">Oral surgery</span> <b>06</b></button>
+            <button class="workspace__rail-link" type="button" data-category-filter="orthodontics"><i></i><span data-i18n="cat_ortho">Orthodontics</span> <b>04</b></button>
+            <button class="workspace__rail-link" type="button" data-category-filter="periodontics"><i></i><span data-i18n="cat_perio">Periodontics</span> <b>06</b></button>
+            <p data-i18n="clinical_motto">Knowledge shared with care.</p>
+          </div>
+
+          <!-- Mobile Scrollable Category Filters -->
+          <div class="workspace-mobile-filters" aria-label="Clinical categories mobile filter">
+            <button class="cat-pill is-current" type="button" data-category-filter="all" data-i18n="cat_pill_all">All (24)</button>
+            <button class="cat-pill" type="button" data-category-filter="endodontics" data-i18n="cat_pill_endo">Endo (08)</button>
+            <button class="cat-pill" type="button" data-category-filter="oral-surgery" data-i18n="cat_pill_surgery">Surgery (06)</button>
+            <button class="cat-pill" type="button" data-category-filter="orthodontics" data-i18n="cat_pill_ortho">Ortho (04)</button>
+            <button class="cat-pill" type="button" data-category-filter="periodontics" data-i18n="cat_pill_perio">Perio (06)</button>
+          </div>
+
+          <div class="workspace__content">
+            <div class="workspace__head">
+              <p><span data-i18n="case_head">Case discussions</span> <span class="head-sub" data-i18n="case_activity">· Latest activity</span></p>
+              <button type="button" data-modal-target="modal-publish" data-i18n="clinical_publish">+ Publish a case</button>
+            </div>
+
+            <article class="case-card case-card--featured" data-case-category="endodontics">
+              <div class="case-card__image case-card__image--a" aria-hidden="true"><span></span><i></i><b></b></div>
+              <div class="case-card__details">
+                <div class="case-card__meta">
+                  <span class="case-tag" data-i18n="tag_endo">ENDODONTICS</span>
+                  <time datetime="2026-08-03" data-i18n="time_18m">18 min ago</time>
+                </div>
+                <h3 data-i18n="case1_title">Management options for a complex canal anatomy</h3>
+                <p data-i18n="case1_desc">Seeking a second perspective on access design and a conservative treatment sequence for this posterior case.</p>
+                <div class="case-card__footer">
+                  <span class="case-author" data-i18n="author_elhadi">Dr. A. Elhadi</span>
+                  <div class="case-metrics">
+                    <button class="metric-btn" type="button" aria-label="Like case" data-like-btn>♡ <span data-like-count>38</span></button>
+                    <span class="metric-item">◌ 12</span>
+                    <span class="metric-item">◉ 240</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <div class="case-card-grid">
+              <article class="case-card case-card--compact" data-case-category="orthodontics">
+                <div class="case-card__image case-card__image--b" aria-hidden="true"><span></span><i></i></div>
+                <div class="case-card__details">
+                  <div class="case-card__meta">
+                    <span class="case-tag" data-i18n="tag_ortho">ORTHODONTICS</span>
+                    <time datetime="2026-08-03" data-i18n="time_1h">1h ago</time>
+                  </div>
+                  <h3 data-i18n="case2_title">Sequencing a Class II correction</h3>
+                  <div class="case-card__footer">
+                    <span class="case-author">S. Alnajjar</span>
+                    <div class="case-metrics">
+                      <button class="metric-btn" type="button" aria-label="Like case" data-like-btn>♡ <span data-like-count>8</span></button>
+                      <span class="metric-item">◉ 114</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="case-card case-card--compact" data-case-category="periodontics">
+                <div class="case-card__image case-card__image--c" aria-hidden="true"><span></span><i></i></div>
+                <div class="case-card__details">
+                  <div class="case-card__meta">
+                    <span class="case-tag" data-i18n="tag_perio">PERIODONTICS</span>
+                    <time datetime="2026-08-03" data-i18n="time_3h">3h ago</time>
+                  </div>
+                  <h3 data-i18n="case3_title">Soft tissue profile at the anterior zone</h3>
+                  <div class="case-card__footer">
+                    <span class="case-author">R. Rahuma</span>
+                    <div class="case-metrics">
+                      <button class="metric-btn" type="button" aria-label="Like case" data-like-btn>♡ <span data-like-count>14</span></button>
+                      <span class="metric-item">◉ 309</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-width clinical__features" data-reveal>
+          <span data-i18n="feat_1">Publish clinical cases</span><i></i><span data-i18n="feat_2">Ask &amp; discuss</span><i></i><span data-i18n="feat_3">Share imaging</span><i></i><span data-i18n="feat_4">Learn from experts</span>
+        </div>
+      </section>
+
+      <!-- Learning Hub Section -->
+      <section class="learning section" aria-labelledby="learning-heading">
+        <div class="page-width learning__top" data-reveal>
+          <p class="section-label" data-i18n="learning_label">Learning Hub</p>
+          <h2 id="learning-heading" data-i18n="learning_title">A library for<br /><em>curious practice.</em></h2>
+          <p class="body-copy" data-i18n="learning_copy">From clinical notes to recorded sessions, every resource is designed to make a meaningful difference in your next conversation, case, or decision.</p>
+        </div>
+        <div class="page-width learning__grid" data-reveal>
+          <a class="learning-item learning-item--large" href="#join">
+            <span class="learning-icon icon-article" aria-hidden="true"></span>
+            <div><small>01</small><h3 data-i18n="learn1_title">Articles</h3><p data-i18n="learn1_desc">Perspectives that expand the field.</p></div>
+            <b aria-hidden="true">↗</b>
+          </a>
+          <a class="learning-item" href="#join">
+            <span class="learning-icon icon-notes" aria-hidden="true"></span>
+            <div><small>02</small><h3 data-i18n="learn2_title">Clinical Notes</h3></div>
+            <b aria-hidden="true">↗</b>
+          </a>
+          <a class="learning-item" href="#join">
+            <span class="learning-icon icon-play" aria-hidden="true"></span>
+            <div><small>03</small><h3 data-i18n="learn3_title">Recorded Lectures</h3></div>
+            <b aria-hidden="true">↗</b>
+          </a>
+          <a class="learning-item learning-item--wide" href="#join">
+            <span class="learning-icon icon-resource" aria-hidden="true"></span>
+            <div><small>04</small><h3 data-i18n="learn4_title">Educational Resources</h3><p data-i18n="learn4_desc">A rigorously curated collection, ready when the next question arrives.</p></div>
+            <b aria-hidden="true">↗</b>
+          </a>
+          <a class="learning-item learning-item--dark" href="#join">
+            <span class="learning-icon icon-guideline" aria-hidden="true"></span>
+            <div><small>05</small><h3 data-i18n="learn5_title">Guidelines</h3></div>
+            <b aria-hidden="true">↗</b>
+          </a>
+        </div>
+      </section>
+
+      <!-- Why DENOVA Section -->
+      <section class="why section" aria-labelledby="why-heading">
+        <div class="page-width why__header" data-reveal>
+          <p class="section-label" data-i18n="why_label">Why DENOVA</p>
+          <h2 id="why-heading" data-i18n="why_title">Where the next<br />generation <em>moves forward.</em></h2>
+        </div>
+        <div class="page-width why__items" data-reveal>
+          <article class="why-item">
+            <p>01</p>
+            <div class="why-item__symbol why-item__symbol--learn" aria-hidden="true"><i></i><i></i><i></i></div>
+            <h3 data-i18n="why1_title">Learn</h3>
+            <p data-i18n="why1_desc">Access ideas, evidence and peer-informed experience that strengthen every stage of your learning.</p>
+            <a href="#learning-heading" aria-label="Learn more about learning">↗</a>
+          </article>
+          <article class="why-item">
+            <p>02</p>
+            <div class="why-item__symbol why-item__symbol--connect" aria-hidden="true"><i></i><i></i><i></i></div>
+            <h3 data-i18n="why2_title">Connect</h3>
+            <p data-i18n="why2_desc">Find the people whose questions, expertise and perspective make your own work more ambitious.</p>
+            <a href="#ecosystem" aria-label="Learn more about connecting">↗</a>
+          </article>
+          <article class="why-item">
+            <p>03</p>
+            <div class="why-item__symbol why-item__symbol--innovate" aria-hidden="true"><i></i><i></i><i></i></div>
+            <h3 data-i18n="why3_title">Innovate</h3>
+            <p data-i18n="why3_desc">Make space for the new thinking, research and collaborations that move dentistry with purpose.</p>
+            <a href="#conference" aria-label="Learn more about innovating">↗</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Statistics Section -->
+      <section class="statistics section" aria-labelledby="statistics-heading">
+        <div class="page-width stats__heading" data-reveal>
+          <p class="section-label" data-i18n="stats_label">In motion</p>
+          <h2 id="statistics-heading" data-i18n="stats_title">A growing force<br />for <em>progress.</em></h2>
+        </div>
+        <div class="page-width stats__grid" data-reveal>
+          <div class="stat"><strong data-counter="2700" data-suffix="+">0</strong><span data-i18n="stat_members">Members</span></div>
+          <div class="stat"><strong data-counter="12" data-suffix="">0</strong><span data-i18n="stat_universities">Universities</span></div>
+          <div class="stat"><strong data-counter="180" data-suffix="+">0</strong><span data-i18n="stat_cases">Published Clinical Cases</span></div>
+          <div class="stat"><strong data-counter="900" data-suffix="+">0</strong><span data-i18n="stat_attendees">Annual Conference Attendees</span></div>
+          <div class="stat"><strong data-counter="8" data-suffix="">0</strong><span data-i18n="stat_partners">Educational Partners</span></div>
+          <div class="stat"><strong data-counter="42" data-suffix="+">0</strong><span data-i18n="stat_speakers">Scientific Speakers</span></div>
+        </div>
+      </section>
+
+      <!-- Join Section -->
+      <section class="join section" id="join" aria-labelledby="join-heading">
+        <div class="join__field" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div class="page-width join__content" data-reveal>
+          <span class="brand-mark brand-mark--join" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <p class="section-label" data-i18n="join_label">The next chapter starts here</p>
+          <h2 id="join-heading" data-i18n="join_title">Join the Future of<br /><em>Dental Innovation</em></h2>
+          <p data-i18n="join_copy">Become part of a community that believes the future of dentistry is collaborative, rigorous, and built together.</p>
+          <div class="join__actions">
+            <a class="button button--cyan" href="mailto:hello@denova.org" data-i18n="join_btn_member">Become a Member <span aria-hidden="true">↗</span></a>
+            <a class="button button--quiet" href="mailto:hello@denova.org" data-i18n="join_btn_contact">Contact Us <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="footer">
+      <div class="page-width footer__top">
+        <div class="footer__brand">
+          <a href="#top" class="mini-brand">
+            <span class="brand-mark brand-mark--small" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <span>DENOVA</span>
+          </a>
+          <p data-i18n="footer_motto">Dental Innovation Forum<br />Innovate · Discover · Elevate</p>
+        </div>
+        <div class="footer__links">
+          <div>
+            <p data-i18n="footer_col1_head">Explore</p>
+            <a href="#about" data-i18n="header_about">About DENOVA</a>
+            <a href="#ecosystem" data-i18n="header_ecosystem">Ecosystem</a>
+            <a href="#conference" data-i18n="header_conference">Annual Conference</a>
+            <a href="#community" data-i18n="header_community">Clinical Community</a>
+          </div>
+          <div>
+            <p data-i18n="footer_col2_head">Connect</p>
+            <a href="mailto:hello@denova.org">hello@denova.org</a>
+            <a href="#join">Instagram</a>
+            <a href="#join">LinkedIn</a>
+            <a href="#join">Facebook</a>
+          </div>
+          <div>
+            <p data-i18n="footer_col3_head">With the support of</p>
+            <a href="#partner-heading" data-i18n="partner_name">Excellence Academy</a>
+            <a href="#supervision-heading" data-i18n="supervision_sig_short">Student Union · Faculty of Dentistry</a>
+          </div>
+        </div>
+      </div>
+      <div class="page-width footer__bottom">
+        <p>© <span data-year></span> DENOVA. <span data-i18n="rights_reserved">All rights reserved.</span></p>
+        <p><span data-i18n="footer_location">Tripoli, Libya</span> <i></i> <span data-i18n="footer_community_tag">A global scientific community</span></p>
+      </div>
+    </footer>
+
+    <!-- Native Mobile Floating Dock Navigation (iOS Ergonomic Touch Bar) -->
+    <nav class="mobile-dock" aria-label="Quick mobile navigation" data-mobile-dock>
+      <a class="dock-item is-active" href="#top" data-dock-link="top" aria-label="Home">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+        <span data-i18n="dock_home">Home</span>
+      </a>
+      <a class="dock-item" href="#ecosystem" data-dock-link="ecosystem" aria-label="Ecosystem">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+        <span data-i18n="dock_network">Network</span>
+      </a>
+      <a class="dock-item" href="#community" data-dock-link="community" aria-label="Community">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        <span data-i18n="dock_clinical">Clinical</span>
+      </a>
+      <a class="dock-item" href="#conference" data-dock-link="conference" aria-label="Conference">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        <span data-i18n="dock_event">Event</span>
+      </a>
+      <a class="dock-item dock-item--cta" href="#join" data-dock-link="join" aria-label="Join">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        <span data-i18n="dock_join">Join</span>
+      </a>
+    </nav>
+
+    <!-- Modal: Publish Case -->
+    <div class="modal" id="modal-publish" aria-hidden="true" role="dialog" aria-labelledby="modal-publish-title">
+      <div class="modal__backdrop" data-modal-close></div>
+      <div class="modal__dialog">
+        <button class="modal__close" type="button" aria-label="Close dialog" data-modal-close>&times;</button>
+        <div class="modal__header">
+          <p class="section-label" data-i18n="clinical_label">Clinical Community</p>
+          <h3 id="modal-publish-title" data-i18n="modal_pub_title">Publish a Clinical Case</h3>
+          <p class="body-copy" data-i18n="modal_pub_sub">Share your case details, imaging, or treatment question with the DENOVA scientific community.</p>
+        </div>
+        <form class="modal__form" id="form-publish">
+          <div class="form-group">
+            <label for="case-title" data-i18n="form_title">Case Title</label>
+            <input type="text" id="case-title" required placeholder="e.g. Management of complex calcified canal" />
+          </div>
+          <div class="form-group">
+            <label for="case-specialty" data-i18n="form_specialty">Specialty</label>
+            <select id="case-specialty" required>
+              <option value="endodontics" data-i18n="cat_endo">Endodontics</option>
+              <option value="oral-surgery" data-i18n="cat_surgery">Oral Surgery</option>
+              <option value="orthodontics" data-i18n="cat_ortho">Orthodontics</option>
+              <option value="periodontics" data-i18n="cat_perio">Periodontics</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="case-summary" data-i18n="form_summary">Clinical Summary</label>
+            <textarea id="case-summary" rows="4" required placeholder="Provide brief medical background, diagnostic findings, and discussion point..."></textarea>
+          </div>
+          <div class="modal__actions">
+            <button class="button button--cyan" type="submit" data-i18n="form_submit_case">Submit Case <span aria-hidden="true">↗</span></button>
+            <button class="button button--quiet" type="button" data-modal-close data-i18n="cancel">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal: Register Conference -->
+    <div class="modal" id="modal-register" aria-hidden="true" role="dialog" aria-labelledby="modal-register-title">
+      <div class="modal__backdrop" data-modal-close></div>
+      <div class="modal__dialog">
+        <button class="modal__close" type="button" aria-label="Close dialog" data-modal-close>&times;</button>
+        <div class="modal__header">
+          <p class="section-label" data-i18n="modal_reg_label">Annual Conference 2026</p>
+          <h3 id="modal-register-title" data-i18n="modal_reg_title">Register for DENOVA 2026</h3>
+          <p class="body-copy" data-i18n="modal_reg_sub">Reserve your place at the defining scientific dental gathering in Tripoli, Libya.</p>
+        </div>
+        <form class="modal__form" id="form-register">
+          <div class="form-group">
+            <label for="reg-name" data-i18n="form_name">Full Name</label>
+            <input type="text" id="reg-name" required placeholder="Dr. / Student Full Name" />
+          </div>
+          <div class="form-group">
+            <label for="reg-email" data-i18n="form_email">Email Address</label>
+            <input type="email" id="reg-email" required placeholder="name@domain.com" />
+          </div>
+          <div class="form-group">
+            <label for="reg-type" data-i18n="form_reg_type">Registration Type</label>
+            <select id="reg-type" required>
+              <option value="student" data-i18n="reg_opt_student">Dental Student / Intern</option>
+              <option value="professional" data-i18n="reg_opt_pro">Practicing Clinician</option>
+              <option value="academic" data-i18n="reg_opt_acad">Educator / Researcher</option>
+            </select>
+          </div>
+          <div class="modal__actions">
+            <button class="button button--gold" type="submit" data-i18n="form_submit_reg">Complete Registration <span aria-hidden="true">↗</span></button>
+            <button class="button button--quiet" type="button" data-modal-close data-i18n="close">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
