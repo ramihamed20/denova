@@ -762,18 +762,97 @@ html[dir="rtl"] .toast-container { right: auto; left: 24px; }
   .about__visual { min-height: 350px; }
   .visual-note { display: none; }
   .section-heading--wide { grid-template-columns: 1fr; gap: 16px; }
-  .ecosystem-mobile-tabs { display: flex; }
-  .ecosystem__field { height: 600px; min-height: 0; margin-top: 24px; }
-  .ecosystem-core { width: 130px; }
-  .ecosystem-node { min-width: 95px; padding: 4px 8px; font-size: 10px; }
-  .ecosystem-node--community { left: 20% !important; top: 16% !important; }
-  .ecosystem-node--education { top: 9% !important; }
-  .ecosystem-node--research { left: 79% !important; top: 18% !important; }
-  .ecosystem-node--innovation { left: 77% !important; top: 61% !important; }
-  .ecosystem-node--conference { top: 76% !important; }
-  .ecosystem-node--partnerships { left: 20% !important; top: 64% !important; }
-  .node-reading { right: auto; bottom: 16px; left: 0; width: min(250px, 80vw); padding: 14px; }
-  html[dir="rtl"] .node-reading { left: auto; right: 0; }
+  /* Mobile-Native Network Architecture */
+  .ecosystem-mobile-tabs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 12px 0 16px;
+    margin-top: 16px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .eco-tab {
+    flex: 0 0 auto;
+    min-height: 38px;
+    padding: 8px 16px;
+    font-size: 11px;
+  }
+  .ecosystem__field {
+    position: relative;
+    height: 520px;
+    min-height: auto;
+    margin-top: 16px;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 214, 190, 0.25);
+    background: radial-gradient(circle at 50% 38%, rgba(77, 38, 127, 0.4), rgba(19, 8, 36, 0.95) 75%);
+    overflow: hidden;
+  }
+  .ecosystem-core {
+    width: 120px;
+    top: 36%;
+    left: 50%;
+  }
+  .ecosystem-core strong {
+    font-size: 12px;
+    margin-top: 2px;
+  }
+  .ecosystem-core small {
+    font-size: 7px;
+  }
+  .ecosystem-node {
+    padding: 5px 12px 5px 6px;
+    font-size: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  }
+  html[dir="rtl"] .ecosystem-node {
+    padding: 5px 6px 5px 12px;
+  }
+  .ecosystem-node span {
+    width: 22px;
+    height: 22px;
+    font-size: 9px;
+  }
+  .ecosystem-node strong {
+    font-size: 10px;
+  }
+  .ecosystem-node--community { left: 22% !important; top: 15% !important; }
+  .ecosystem-node--education { left: 50% !important; top: 9% !important; }
+  .ecosystem-node--research { left: 78% !important; top: 15% !important; }
+  .ecosystem-node--innovation { left: 80% !important; top: 52% !important; }
+  .ecosystem-node--conference { left: 50% !important; top: 62% !important; }
+  .ecosystem-node--partnerships { left: 20% !important; top: 52% !important; }
+
+  .node-reading {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-width: none;
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 214, 190, 0.35);
+    background: rgba(19, 8, 36, 0.96);
+    backdrop-filter: blur(24px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8);
+  }
+  html[dir="rtl"] .node-reading {
+    left: 12px;
+    right: 12px;
+  }
+  .node-reading h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .node-reading p {
+    font-size: 11px;
+    line-height: 1.55;
+    margin-bottom: 10px;
+  }
+  .node-reading__head {
+    margin-bottom: 8px;
+  }
   .supervision__layout { grid-template-columns: 1fr; gap: 28px; }
   .supervision__seal-wrap { min-height: 300px; }
   .supervision__seal { width: 60vw; }
