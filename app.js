@@ -163,6 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
       toast_like: 'Appreciated case discussion!',
       toast_submitted: 'Clinical case submitted successfully!',
       toast_registered: 'Registration request sent! Check your email.',
+      status_active: 'Active Node',
+      node_explore_hint: 'Interactive Node',
     },
     ar: {
       skip_link: 'الانتقال إلى المحتوى الرئيسي',
@@ -321,6 +323,8 @@ document.addEventListener('DOMContentLoaded', () => {
       toast_like: 'تمت إضافة إعجابك بالحالة السريرية!',
       toast_submitted: 'تم إرسال الحالة السريرية بنجاح!',
       toast_registered: 'تم استلام طلب التسجيل! يرجى مراجعة بريدك.',
+      status_active: 'عنصر نشط',
+      node_explore_hint: 'اضغط لتصفح العنصر',
     },
   };
 
