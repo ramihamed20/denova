@@ -698,43 +698,24 @@ body.menu-open .mobile-dock {
   margin-bottom: clamp(36px, 6vh, 80px);
 }
 
-.hero__logo-wrapper {
+.hero__main-brand-wrap {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 20px;
+  width: min(100%, 640px);
 }
 
-.hero__logo-img {
-  width: clamp(70px, 9vw, 96px);
+.hero__main-brand-img {
+  width: 100%;
   height: auto;
-  aspect-ratio: 1;
   object-fit: contain;
-  filter: drop-shadow(0 0 25px rgba(0, 240, 214, 0.75));
-  animation: pulse-glow 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 30px rgba(0, 240, 214, 0.65));
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.hero__logo-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.hero__logo-title {
-  font-family: var(--font-headline);
-  font-size: clamp(32px, 4.5vw, 48px);
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  color: #ffffff;
-  line-height: 1;
-  text-shadow: 0 0 20px rgba(0, 240, 214, 0.5);
-}
-
-.hero__logo-sub {
-  margin-top: 6px;
-  font-size: clamp(12px, 1.3vw, 15px);
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold-light);
+.hero__main-brand-img:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 40px rgba(0, 240, 214, 0.85));
 }
 
 .hero__intro {
