@@ -280,76 +280,76 @@ h1 { max-width: 15ch; margin-bottom: 26px; color: var(--white); font-size: clamp
   filter: drop-shadow(0 0 6px rgba(0, 214, 190, 0.6));
 }
 
-/* Premium Interactive Ecosystem Node Cards */
+/* Compact Interactive Ecosystem Node Cards */
 .ecosystem-node {
   position: absolute;
   z-index: 2;
   top: var(--y);
   left: var(--x);
   display: flex;
-  min-width: 140px;
-  min-height: 54px;
+  min-width: 105px;
+  min-height: 42px;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 10px 18px;
-  border: 1px solid rgba(0, 214, 190, 0.3);
-  border-radius: 16px;
-  background: rgba(19, 8, 36, 0.88);
-  backdrop-filter: blur(20px);
+  padding: 6px 12px;
+  border: 1px solid rgba(0, 214, 190, 0.35);
+  border-radius: 12px;
+  background: rgba(19, 8, 36, 0.9);
+  backdrop-filter: blur(16px);
   color: #ffffff;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 800;
   transform: translate(-50%, -50%);
-  transition: all 0.35s var(--ease-spring);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.3s var(--ease-spring);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
   cursor: pointer;
 }
 
 .ecosystem-node span {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  margin-bottom: 3px;
+  gap: 5px;
+  margin-bottom: 1px;
   color: var(--gold-light);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 900;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
 }
 
 .ecosystem-node span::before {
   content: '';
   display: inline-block;
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: var(--cyan);
-  box-shadow: 0 0 8px var(--cyan);
+  box-shadow: 0 0 6px var(--cyan);
   transition: transform 0.3s var(--ease-spring);
 }
 
 .ecosystem-node:hover {
-  transform: translate(-50%, -54%) scale(1.06);
+  transform: translate(-50%, -54%) scale(1.05);
   border-color: var(--cyan);
   background: rgba(33, 16, 68, 0.95);
-  box-shadow: 0 14px 36px rgba(0, 214, 190, 0.35), inset 0 0 15px rgba(0, 214, 190, 0.2);
+  box-shadow: 0 10px 24px rgba(0, 214, 190, 0.35);
   color: var(--cyan-soft);
 }
 
 .ecosystem-node:hover span::before {
-  transform: scale(1.6);
+  transform: scale(1.4);
   background: #ffffff;
-  box-shadow: 0 0 12px #ffffff;
+  box-shadow: 0 0 10px #ffffff;
 }
 
 .ecosystem-node.is-active {
-  transform: translate(-50%, -50%) scale(1.08);
+  transform: translate(-50%, -50%) scale(1.06);
   border-color: var(--cyan);
   background: linear-gradient(135deg, rgba(48, 20, 93, 0.96), rgba(0, 214, 190, 0.25));
   color: #ffffff;
-  box-shadow: 0 0 30px rgba(0, 214, 190, 0.5), inset 0 0 20px rgba(0, 214, 190, 0.25);
-  outline: 2px solid rgba(0, 214, 190, 0.4);
-  outline-offset: 4px;
+  box-shadow: 0 0 24px rgba(0, 214, 190, 0.45);
+  outline: 1.5px solid rgba(0, 214, 190, 0.4);
+  outline-offset: 3px;
 }
 
 .ecosystem-node.is-active span {
@@ -358,7 +358,7 @@ h1 { max-width: 15ch; margin-bottom: 26px; color: var(--white); font-size: clamp
 
 .ecosystem-node.is-active span::before {
   background: var(--cyan-soft);
-  box-shadow: 0 0 10px var(--cyan-soft);
+  box-shadow: 0 0 8px var(--cyan-soft);
   animation: pulse-glow 1.5s infinite alternate;
 }
 
@@ -369,7 +369,7 @@ h1 { max-width: 15ch; margin-bottom: 26px; color: var(--white); font-size: clamp
   top: 50%;
   left: 50%;
   display: flex;
-  width: 190px;
+  width: 145px;
   aspect-ratio: 1;
   flex-direction: column;
   align-items: center;
@@ -378,66 +378,70 @@ h1 { max-width: 15ch; margin-bottom: 26px; color: var(--white); font-size: clamp
   border-radius: 50%;
   background: radial-gradient(circle, rgba(50, 19, 93, 0.98), rgba(19, 8, 36, 0.95));
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 50px rgba(0, 214, 190, 0.35), inset 0 0 30px rgba(0, 214, 190, 0.2);
+  box-shadow: 0 0 40px rgba(0, 214, 190, 0.3), inset 0 0 20px rgba(0, 214, 190, 0.2);
   transition: transform 0.4s var(--ease-spring);
 }
 
 .ecosystem-core::before {
   content: '';
   position: absolute;
-  inset: -12px;
+  inset: -9px;
   border: 1px dashed rgba(216, 166, 82, 0.4);
   border-radius: 50%;
   animation: line-flow 30s linear infinite;
 }
 
 .ecosystem-core strong {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   color: #ffffff;
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
-/* Floating Detail Card Widget */
+.ecosystem-core small {
+  font-size: 8px;
+}
+
+/* Compact Floating Detail Card Widget */
 .node-reading {
   position: absolute;
   right: 0;
-  bottom: 28px;
-  width: min(320px, 90vw);
-  padding: 20px 24px;
-  border-left: 4px solid var(--gold);
-  border-radius: 0 20px 20px 0;
+  bottom: 24px;
+  width: min(260px, 85vw);
+  padding: 14px 18px;
+  border-left: 3px solid var(--gold);
+  border-radius: 0 16px 16px 0;
   background: rgba(19, 8, 36, 0.94);
-  backdrop-filter: blur(24px);
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-  border-right: 1px solid rgba(255, 255, 255, 0.14);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
 }
 
 html[dir="rtl"] .node-reading {
   right: auto;
   left: 0;
-  border-left: 1px solid rgba(255, 255, 255, 0.14);
-  border-right: 4px solid var(--gold);
-  border-radius: 20px 0 0 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  border-right: 3px solid var(--gold);
+  border-radius: 16px 0 0 16px;
 }
 
 .node-reading__index {
   display: inline-block;
-  padding: 3px 10px;
+  padding: 2px 8px;
   border-radius: 999px;
   background: rgba(216, 166, 82, 0.18);
   border: 1px solid rgba(216, 166, 82, 0.35);
   color: var(--gold-light);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 900;
 }
 
 .node-reading h3 {
-  margin: 10px 0 8px;
-  font-size: 24px;
+  margin: 6px 0 6px;
+  font-size: 18px;
   font-weight: 700;
   color: #ffffff;
 }
@@ -445,8 +449,8 @@ html[dir="rtl"] .node-reading {
 .node-reading p {
   margin: 0;
   color: rgba(240, 236, 248, 0.92);
-  font-size: 13px;
-  line-height: 1.7;
+  font-size: 12px;
+  line-height: 1.6;
   font-weight: 500;
 }
 
