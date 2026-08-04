@@ -303,80 +303,42 @@ html[dir="rtl"] .text-link:hover span {
   color: var(--white);
 }
 
-/* Brand Mark */
+/* Brand Mark - Official Transparent DENOVA Emblem Logo */
 .brand-mark {
   position: relative;
   display: inline-block;
   width: 72px;
   height: 72px;
   flex: 0 0 auto;
+  background: url('assets/denova-logo.png') center / contain no-repeat;
+  filter: drop-shadow(0 0 14px rgba(0, 240, 214, 0.55));
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+.brand-mark:hover {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 22px rgba(0, 240, 214, 0.85));
+}
+
+.brand-mark i,
 .brand-mark::before {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 15%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: var(--cyan-soft);
-  box-shadow: 0 0 18px rgba(0, 214, 190, 0.85);
-  content: '';
-  transform: translate(-50%, -50%);
-}
-
-.brand-mark i {
-  position: absolute;
-  width: 35%;
-  height: 38%;
-  border: 4px solid var(--cyan);
-  border-radius: 50% 42% 50% 42%;
-}
-
-.brand-mark i:nth-child(1) {
-  top: 3%;
-  left: 7%;
-  border-right-width: 7px;
-  transform: rotate(16deg);
-}
-
-.brand-mark i:nth-child(2) {
-  top: 3%;
-  right: 7%;
-  border-left-width: 7px;
-  transform: rotate(-16deg);
-}
-
-.brand-mark i:nth-child(3) {
-  bottom: 3%;
-  left: 7%;
-  border-right-width: 7px;
-  transform: rotate(-16deg);
-}
-
-.brand-mark i:nth-child(4) {
-  right: 7%;
-  bottom: 3%;
-  border-left-width: 7px;
-  transform: rotate(16deg);
+  display: none !important;
 }
 
 .brand-mark--small {
-  width: 28px;
-  height: 28px;
-}
-
-.brand-mark--small i {
-  border-width: 2px;
+  width: 32px;
+  height: 32px;
 }
 
 .brand-mark--tiny {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
 }
 
-.brand-mark--tiny i {
-  border-width: 1px;
+.brand-mark--core {
+  width: 96px;
+  height: 96px;
+  filter: drop-shadow(0 0 28px rgba(0, 240, 214, 0.7));
 }
 
 /* Header & Nav */
@@ -736,20 +698,43 @@ body.menu-open .mobile-dock {
   margin-bottom: clamp(36px, 6vh, 80px);
 }
 
-.official-logo-crop {
-  position: relative;
-  width: min(100%, 420px);
-  height: 104px;
-  overflow: hidden;
+.hero__logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.official-logo-crop img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 829px;
-  max-width: none;
-  transform: translate(-60px, -171px);
+.hero__logo-img {
+  width: clamp(70px, 9vw, 96px);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  filter: drop-shadow(0 0 25px rgba(0, 240, 214, 0.75));
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.hero__logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__logo-title {
+  font-family: var(--font-headline);
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  line-height: 1;
+  text-shadow: 0 0 20px rgba(0, 240, 214, 0.5);
+}
+
+.hero__logo-sub {
+  margin-top: 6px;
+  font-size: clamp(12px, 1.3vw, 15px);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-light);
 }
 
 .hero__intro {
