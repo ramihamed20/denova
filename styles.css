@@ -1188,13 +1188,14 @@ html[dir="rtl"] .network-card:hover .network-card__arrow {
 .partner__card {
   position: relative;
   display: grid;
-  min-height: 500px;
-  grid-template-columns: 1fr 0.75fr;
+  min-height: 480px;
+  grid-template-columns: 1.1fr 0.9fr;
   overflow: hidden;
-  border-radius: 24px;
-  border: 1px solid var(--gold);
-  background: var(--royal);
+  border-radius: 28px;
+  border: 1.5px solid rgba(216, 166, 82, 0.55);
+  background: linear-gradient(135deg, rgba(31, 14, 60, 0.98), rgba(19, 8, 36, 0.99));
   color: var(--white);
+  box-shadow: 0 25px 70px -15px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .partner__content {
@@ -1203,7 +1204,7 @@ html[dir="rtl"] .network-card:hover .network-card__arrow {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(40px, 7vw, 100px);
+  padding: clamp(40px, 7vw, 90px);
 }
 
 .partner__identity {
@@ -1213,28 +1214,41 @@ html[dir="rtl"] .network-card:hover .network-card__arrow {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 50px;
-  border-left: 1px solid rgba(216, 166, 82, 0.45);
+  padding: 40px;
+  border-left: 1px solid rgba(216, 166, 82, 0.35);
+  background: radial-gradient(circle at 50% 50%, rgba(216, 166, 82, 0.15) 0%, transparent 70%);
 }
 
 html[dir="rtl"] .partner__identity {
   border-left: 0;
-  border-right: 1px solid rgba(216, 166, 82, 0.45);
+  border-right: 1px solid rgba(216, 166, 82, 0.35);
 }
 
 .partner__logo-frame {
-  display: grid;
-  width: min(22vw, 230px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(28vw, 220px);
   aspect-ratio: 1;
-  place-items: center;
+  padding: 22px;
   overflow: hidden;
   border-radius: 50%;
-  background: var(--white);
+  background: #ffffff;
+  border: 2.5px solid var(--gold);
+  box-shadow: 0 0 45px rgba(216, 166, 82, 0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner__logo-frame:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 65px rgba(216, 166, 82, 0.7);
 }
 
 .partner__logo-frame img {
-  width: 145%;
-  max-width: none;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: none;
 }
 
 /* Conference Section - Maximum High-Contrast & Legibility System */
