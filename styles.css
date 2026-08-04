@@ -1261,9 +1261,9 @@ html[dir="rtl"] .partner__identity {
   max-width: none;
 }
 
-/* Conference */
+/* Conference Section - Enhanced Gold & Cyan Color System */
 .conference {
-  background: var(--royal-deep);
+  background: radial-gradient(ellipse 100% 70% at 50% 30%, #2a1352 0%, var(--royal-deep) 100%);
   color: var(--white);
 }
 
@@ -1276,10 +1276,19 @@ html[dir="rtl"] .partner__identity {
   gap: 40px;
 }
 
+.conference__top .section-label {
+  color: var(--gold-light);
+}
+
+.conference__top h2 em {
+  color: var(--cyan);
+  text-shadow: 0 0 25px rgba(0, 214, 190, 0.5);
+}
+
 .conference__date {
   min-width: 230px;
   margin: 0;
-  color: var(--gold-light);
+  color: #ffffff;
   font-size: 17px;
   font-weight: 500;
   text-align: right;
@@ -1290,8 +1299,15 @@ html[dir="rtl"] .conference__date {
 }
 
 .conference__date span {
-  font-size: 30px;
-  font-weight: 700;
+  color: var(--gold-light);
+  font-size: 32px;
+  font-weight: 800;
+  text-shadow: 0 0 16px rgba(216, 166, 82, 0.5);
+}
+
+.conference__date small {
+  color: rgba(240, 236, 248, 0.85);
+  font-size: 11px;
 }
 
 .conference__stage {
@@ -1302,25 +1318,27 @@ html[dir="rtl"] .conference__date {
   min-height: 560px;
   margin-top: clamp(40px, 6vw, 76px);
   overflow: hidden;
-  border-radius: 24px;
-  border: 1px solid var(--line);
-  background: rgba(19, 8, 36, 0.6);
+  border-radius: 28px;
+  border: 1.5px solid rgba(0, 214, 190, 0.35);
+  background: linear-gradient(135deg, rgba(31, 14, 60, 0.95), rgba(19, 8, 36, 0.98));
+  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .conference__art {
   position: relative;
   min-height: 480px;
   overflow: hidden;
-  background: radial-gradient(circle at 50% 50%, #4d2977, #251246 50%, #130824 72%);
+  background: radial-gradient(circle at 50% 50%, rgba(0, 214, 190, 0.2) 0%, rgba(77, 38, 127, 0.95) 45%, rgba(19, 8, 36, 0.98) 80%);
 }
 
 .conference-ring {
   position: absolute;
   top: 50%;
   left: 50%;
-  border: 1px solid rgba(0, 214, 190, 0.34);
+  border: 1.5px solid rgba(0, 214, 190, 0.6);
   border-radius: 50%;
   transform: translate(-50%, -50%);
+  box-shadow: 0 0 25px rgba(0, 214, 190, 0.3);
 }
 
 .conference-ring--outer {
@@ -1331,7 +1349,8 @@ html[dir="rtl"] .conference__date {
 .conference-ring--middle {
   width: 63%;
   aspect-ratio: 1;
-  border-color: rgba(216, 166, 82, 0.48);
+  border-color: rgba(216, 166, 82, 0.7);
+  box-shadow: 0 0 25px rgba(216, 166, 82, 0.3);
 }
 
 .conference-mark {
@@ -1339,13 +1358,14 @@ html[dir="rtl"] .conference__date {
   top: 50%;
   left: 50%;
   display: grid;
-  width: 135px;
+  width: 145px;
   aspect-ratio: 1;
   place-items: center;
-  border: 1px solid rgba(0, 214, 190, 0.67);
+  border: 1.5px solid rgba(0, 214, 190, 0.8);
   border-radius: 50%;
-  background: var(--royal);
+  background: radial-gradient(circle, rgba(50, 19, 93, 0.98), rgba(19, 8, 36, 0.98));
   transform: translate(-50%, -50%);
+  box-shadow: 0 0 50px rgba(0, 214, 190, 0.5), inset 0 0 20px rgba(0, 214, 190, 0.3);
 }
 
 .conference__art>p {
@@ -1356,6 +1376,7 @@ html[dir="rtl"] .conference__date {
   color: var(--gold-light);
   font-size: 11px;
   font-weight: 800;
+  letter-spacing: 0.1em;
 }
 
 html[dir="rtl"] .conference__art>p {
@@ -1368,12 +1389,12 @@ html[dir="rtl"] .conference__art>p {
   flex-direction: column;
   justify-content: center;
   padding: clamp(32px, 5vw, 70px);
-  border-left: 1px solid var(--line);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 html[dir="rtl"] .conference__details {
   border-left: 0;
-  border-right: 1px solid var(--line);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .countdown {
@@ -1389,18 +1410,20 @@ html[dir="rtl"] .conference__details {
 .countdown__cells b {
   display: flex;
   flex-direction: column;
-  color: var(--white);
-  font-size: clamp(24px, 3.2vw, 40px);
-  font-weight: 600;
+  color: #ffffff;
+  font-size: clamp(26px, 3.5vw, 44px);
+  font-weight: 800;
   line-height: 0.9;
+  text-shadow: 0 0 16px rgba(0, 214, 190, 0.7);
 }
 
 .countdown__cells small {
   margin-top: 6px;
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 9px;
-  font-weight: 700;
+  color: var(--gold-light);
+  font-size: 10px;
+  font-weight: 800;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .conference__actions {
