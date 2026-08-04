@@ -13,7 +13,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300..900&family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=23" />
+  <link rel="stylesheet" href="styles.css?v=24" />
 </head>
 
 <body>
@@ -335,172 +335,60 @@
         <div class="page-width clinical__intro" data-reveal>
           <div>
             <p class="section-label" data-i18n="clinical_label">Clinical Community</p>
-            <h2 id="clinical-heading" data-i18n="clinical_title">Learn from real<br /><em>discussions.</em></h2>
+            <h2 id="clinical-heading" data-i18n="clinical_title">Clinical Case<br /><em>Discussions</em></h2>
           </div>
           <div>
-            <p class="body-copy" data-i18n="clinical_copy">A refined scientific space to publish clinical cases, ask
-              sharper questions, discuss treatment plans, and learn directly from peers and experts.</p>
-            <a href="#join" class="text-link" data-i18n="clinical_visit">Visit Clinical Community <span
-                aria-hidden="true">↗</span></a>
+            <p class="body-copy" data-i18n="clinical_copy">A dedicated scientific space for dental practitioners to share clinical imaging, discuss complex cases, and collaborate on evidence-based treatment plans.</p>
           </div>
         </div>
 
-        <div class="page-width clinical__workspace" data-reveal>
-          <div class="workspace__rail">
-            <span class="workspace__brand"><span class="brand-mark brand-mark--tiny"><i></i><i></i><i></i><i></i></span>
-              DENOVA / Clinical</span>
-            <button class="workspace__rail-link is-current" type="button" data-category-filter="all"><i></i><span
-                data-i18n="cat_all">All cases</span> <b>24</b></button>
-            <button class="workspace__rail-link" type="button" data-category-filter="endodontics"><i></i><span
-                data-i18n="cat_endo">Endodontics</span> <b>08</b></button>
-            <button class="workspace__rail-link" type="button" data-category-filter="oral-surgery"><i></i><span
-                data-i18n="cat_surgery">Oral surgery</span> <b>06</b></button>
-            <button class="workspace__rail-link" type="button" data-category-filter="orthodontics"><i></i><span
-                data-i18n="cat_ortho">Orthodontics</span> <b>04</b></button>
-            <button class="workspace__rail-link" type="button" data-category-filter="periodontics"><i></i><span
-                data-i18n="cat_perio">Periodontics</span> <b>06</b></button>
-            <p data-i18n="clinical_motto">Knowledge shared with care.</p>
-          </div>
-
-          <!-- Mobile Scrollable Category Filters -->
-          <div class="workspace-mobile-filters" aria-label="Clinical categories mobile filter">
-            <button class="cat-pill is-current" type="button" data-category-filter="all" data-i18n="cat_pill_all">All
-              (24)</button>
-            <button class="cat-pill" type="button" data-category-filter="endodontics" data-i18n="cat_pill_endo">Endo
-              (08)</button>
-            <button class="cat-pill" type="button" data-category-filter="oral-surgery"
-              data-i18n="cat_pill_surgery">Surgery (06)</button>
-            <button class="cat-pill" type="button" data-category-filter="orthodontics" data-i18n="cat_pill_ortho">Ortho
-              (04)</button>
-            <button class="cat-pill" type="button" data-category-filter="periodontics" data-i18n="cat_pill_perio">Perio
-              (06)</button>
-          </div>
-
-          <div class="workspace__content">
-            <div class="workspace__head">
-              <p><span data-i18n="case_head">Case discussions</span> <span class="head-sub" data-i18n="case_activity">·
-                  Latest activity</span></p>
-              <button type="button" data-modal-target="modal-publish" data-i18n="clinical_publish">+ Publish a
-                case</button>
+        <div class="page-width" data-reveal>
+          <div class="clinical__coming-soon">
+            <div class="coming-soon__badge">
+              <span class="pulse-led"></span>
+              <span data-i18n="clinical_badge">✦ Coming Soon</span>
             </div>
+            <div class="coming-soon__icon">
+              <span class="brand-mark brand-mark--core"><i></i><i></i><i></i><i></i></span>
+            </div>
+            <h3 data-i18n="clinical_cs_title">Clinical Case Discussions</h3>
+            <p data-i18n="clinical_cs_subtitle">A specialized platform launching soon on DENOVA for clinicians, residents, and dental students to publish cases, share diagnostic imaging, and consult with leading experts.</p>
 
-            <article class="case-card case-card--featured" data-case-category="endodontics">
-              <div class="case-card__image case-card__image--a" aria-hidden="true"><span></span><i></i><b></b></div>
-              <div class="case-card__details">
-                <div class="case-card__meta">
-                  <span class="case-tag" data-i18n="tag_endo">ENDODONTICS</span>
-                  <time datetime="2026-08-03" data-i18n="time_18m">18 min ago</time>
-                </div>
-                <h3 data-i18n="case1_title">Management options for a complex canal anatomy</h3>
-                <p data-i18n="case1_desc">Seeking a second perspective on access design and a conservative treatment
-                  sequence for this posterior case.</p>
-                <div class="case-card__footer">
-                  <span class="case-author" data-i18n="author_elhadi">Dr. A. Elhadi</span>
-                  <div class="case-metrics">
-                    <button class="metric-btn" type="button" aria-label="Like case" data-like-btn>♡ <span
-                        data-like-count>38</span></button>
-                    <span class="metric-item">◌ 12</span>
-                    <span class="metric-item">◉ 240</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <div class="case-card-grid">
-              <article class="case-card case-card--compact" data-case-category="orthodontics">
-                <div class="case-card__image case-card__image--b" aria-hidden="true"><span></span><i></i></div>
-                <div class="case-card__details">
-                  <div class="case-card__meta">
-                    <span class="case-tag" data-i18n="tag_ortho">ORTHODONTICS</span>
-                    <time datetime="2026-08-03" data-i18n="time_1h">1h ago</time>
-                  </div>
-                  <h3 data-i18n="case2_title">Sequencing a Class II correction</h3>
-                  <div class="case-card__footer">
-                    <span class="case-author">S. Alnajjar</span>
-                    <div class="case-metrics">
-                      <button class="metric-btn" type="button" aria-label="Like case" data-like-btn>♡ <span
-                          data-like-count>8</span></button>
-                      <span class="metric-item">◉ 114</span>
-                    </div>
-                  </div>
-                </div>
-              </article>
-
-              <article class="case-card case-card--compact" data-case-category="periodontics">
-                <div class="case-card__image case-card__image--c" aria-hidden="true"><span></span><i></i></div>
-                <div class="case-card__details">
-                  <div class="case-card__meta">
-                    <span class="case-tag" data-i18n="tag_perio">PERIODONTICS</span>
-                    <time datetime="2026-08-03" data-i18n="time_3h">3h ago</time>
-                  </div>
-                  <h3 data-i18n="case3_title">Soft tissue profile at the anterior zone</h3>
-                  <div class="case-card__footer">
-                    <span class="case-author">R. Rahuma</span>
-                    <div class="case-metrics">
-                      <button class="metric-btn" type="button" aria-label="Like case" data-like-btn>♡ <span
-                          data-like-count>14</span></button>
-                      <span class="metric-item">◉ 309</span>
-                    </div>
-                  </div>
-                </div>
-              </article>
+            <div class="coming-soon__actions">
+              <button class="button button--cyan" type="button" data-modal-target="modal-publish" data-i18n="clinical_notify_btn">Notify Me Upon Launch ↖</button>
             </div>
           </div>
-        </div>
-
-        <div class="page-width clinical__features" data-reveal>
-          <span data-i18n="feat_1">Publish clinical cases</span><i></i><span data-i18n="feat_2">Ask &amp;
-            discuss</span><i></i><span data-i18n="feat_3">Share imaging</span><i></i><span data-i18n="feat_4">Learn from
-            experts</span>
         </div>
       </section>
 
       <!-- Learning Hub Section -->
-      <section class="learning section" aria-labelledby="learning-heading">
+      <section class="learning section" id="learning" aria-labelledby="learning-heading">
         <div class="page-width learning__top" data-reveal>
-          <p class="section-label" data-i18n="learning_label">Learning Hub</p>
-          <h2 id="learning-heading" data-i18n="learning_title">A library for<br /><em>curious practice.</em></h2>
-          <p class="body-copy" data-i18n="learning_copy">From clinical notes to recorded sessions, every resource is
-            designed to make a meaningful difference in your next conversation, case, or decision.</p>
+          <div>
+            <p class="section-label" data-i18n="learning_label">Learning Hub</p>
+            <h2 id="learning-heading" data-i18n="learning_title">A library for<br /><em>curious practice.</em></h2>
+          </div>
+          <div>
+            <p class="body-copy" data-i18n="learning_copy">From clinical notes to recorded sessions, every resource is designed to make a meaningful difference in your next conversation, case, or decision.</p>
+          </div>
         </div>
-        <div class="page-width learning__grid" data-reveal>
-          <a class="learning-item learning-item--large" href="#join">
-            <span class="learning-icon icon-article" aria-hidden="true"></span>
-            <div><small>01</small>
-              <h3 data-i18n="learn1_title">Articles</h3>
-              <p data-i18n="learn1_desc">Perspectives that expand the field.</p>
+
+        <div class="page-width" data-reveal>
+          <div class="learning__coming-soon">
+            <div class="coming-soon__badge">
+              <span class="pulse-led"></span>
+              <span data-i18n="learning_badge">✦ Coming Soon</span>
             </div>
-            <b aria-hidden="true">↗</b>
-          </a>
-          <a class="learning-item" href="#join">
-            <span class="learning-icon icon-notes" aria-hidden="true"></span>
-            <div><small>02</small>
-              <h3 data-i18n="learn2_title">Clinical Notes</h3>
+            <div class="coming-soon__icon">
+              <span class="brand-mark brand-mark--core"><i></i><i></i><i></i><i></i></span>
             </div>
-            <b aria-hidden="true">↗</b>
-          </a>
-          <a class="learning-item" href="#join">
-            <span class="learning-icon icon-play" aria-hidden="true"></span>
-            <div><small>03</small>
-              <h3 data-i18n="learn3_title">Recorded Lectures</h3>
+            <h3 data-i18n="learning_cs_title">Learning Hub & Digital Library</h3>
+            <p data-i18n="learning_cs_subtitle">A rich scientific repository coming soon on DENOVA, featuring clinical notes, evidence-based articles, recorded lectures, and curated academic guides.</p>
+
+            <div class="coming-soon__actions">
+              <button class="button button--cyan" type="button" data-modal-target="modal-publish" data-i18n="learning_notify_btn">Notify Me Upon Release ↖</button>
             </div>
-            <b aria-hidden="true">↗</b>
-          </a>
-          <a class="learning-item learning-item--wide" href="#join">
-            <span class="learning-icon icon-resource" aria-hidden="true"></span>
-            <div><small>04</small>
-              <h3 data-i18n="learn4_title">Educational Resources</h3>
-              <p data-i18n="learn4_desc">A rigorously curated collection, ready when the next question arrives.</p>
-            </div>
-            <b aria-hidden="true">↗</b>
-          </a>
-          <a class="learning-item learning-item--dark" href="#join">
-            <span class="learning-icon icon-guideline" aria-hidden="true"></span>
-            <div><small>05</small>
-              <h3 data-i18n="learn5_title">Guidelines</h3>
-            </div>
-            <b aria-hidden="true">↗</b>
-          </a>
+          </div>
         </div>
       </section>
 
