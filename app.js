@@ -676,6 +676,14 @@ document.addEventListener('DOMContentLoaded', () => {
     { threshold: 0.3 }
   );
 
+  // Network Bento Card Click Highlight
+  document.querySelectorAll('.network-card').forEach((card) => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.network-card').forEach((c) => c.classList.remove('is-active'));
+      card.classList.add('is-active');
+    });
+  });
+
   sections.forEach((section) => sectionObserver.observe(section));
 
   // Initial Language Setup

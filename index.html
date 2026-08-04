@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300..900&family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=14" />
+    <link rel="stylesheet" href="styles.css?v=15" />
   </head>
   <body>
     <a class="skip-link" href="#main" data-i18n="skip_link">Skip to content</a>
@@ -28,6 +28,7 @@
 
       <nav class="desktop-nav" aria-label="Primary navigation">
         <a href="#about" data-nav-link="about" data-i18n="header_about">About</a>
+        <a href="#ecosystem" data-nav-link="ecosystem" data-i18n="header_ecosystem">Ecosystem</a>
         <a href="#conference" data-nav-link="conference" data-i18n="header_conference">Conference</a>
         <a href="#community" data-nav-link="community" data-i18n="header_community">Community</a>
       </nav>
@@ -63,8 +64,9 @@
       </div>
       <div class="mobile-nav__links">
         <a href="#about"><span data-i18n="header_about">About</span><small>01</small></a>
-        <a href="#conference"><span data-i18n="header_conference">Conference</span><small>02</small></a>
-        <a href="#community"><span data-i18n="header_community">Community</span><small>03</small></a>
+        <a href="#ecosystem"><span data-i18n="header_ecosystem">Ecosystem</span><small>02</small></a>
+        <a href="#conference"><span data-i18n="header_conference">Conference</span><small>03</small></a>
+        <a href="#community"><span data-i18n="header_community">Community</span><small>04</small></a>
         <a href="#join" class="mobile-nav__cta"><span data-i18n="header_join">Join DENOVA</span><span aria-hidden="true">↗</span></a>
       </div>
       <div class="mobile-nav__footer">
@@ -126,9 +128,97 @@
             <p class="visual-note visual-note--b" data-i18n="about_note_b">Built for the next generation</p>
           </div>
         </div>
+
+      <!-- Ecosystem Network Section -->
+      <section class="ecosystem section" id="ecosystem" aria-labelledby="ecosystem-heading">
+        <div class="page-width">
+          <div class="section-heading" data-reveal>
+            <p class="section-label" data-i18n="ecosystem_label">A connected platform</p>
+            <h2 id="ecosystem-heading" data-i18n="ecosystem_title">One forum.<br />A living <em>ecosystem.</em></h2>
+            <p class="body-copy" data-i18n="ecosystem_copy">Connecting ambitious minds across 6 core pillars of dental excellence.</p>
+          </div>
+
+          <div class="network-bento" data-reveal>
+            <article class="network-card is-active" data-network-card="community">
+              <div class="network-card__top">
+                <span class="network-card__num">01</span>
+                <span class="network-card__badge" data-i18n="eco_tab_1">Community</span>
+              </div>
+              <h3 data-i18n="node_community">Community</h3>
+              <p data-i18n="node_desc_community">A shared ground for students, educators and professionals to exchange perspective and move the profession forward.</p>
+              <div class="network-card__footer">
+                <span class="network-card__tag">✦ Interactive</span>
+                <span class="network-card__arrow">→</span>
+              </div>
+            </article>
+
+            <article class="network-card" data-network-card="education">
+              <div class="network-card__top">
+                <span class="network-card__num">02</span>
+                <span class="network-card__badge" data-i18n="eco_tab_2">Education</span>
+              </div>
+              <h3 data-i18n="node_education">Education</h3>
+              <p data-i18n="node_desc_education">Advanced clinical workshops, hands-on training, and academic resources designed for continuous growth.</p>
+              <div class="network-card__footer">
+                <span class="network-card__tag">✦ Academic</span>
+                <span class="network-card__arrow">→</span>
+              </div>
+            </article>
+
+            <article class="network-card" data-network-card="research">
+              <div class="network-card__top">
+                <span class="network-card__num">03</span>
+                <span class="network-card__badge" data-i18n="eco_tab_3">Research</span>
+              </div>
+              <h3 data-i18n="node_research">Research</h3>
+              <p data-i18n="node_desc_research">A platform for publishing clinical cases, exchanging scientific evidence, and fostering evidence-based practice.</p>
+              <div class="network-card__footer">
+                <span class="network-card__tag">✦ Evidence</span>
+                <span class="network-card__arrow">→</span>
+              </div>
+            </article>
+
+            <article class="network-card" data-network-card="innovation">
+              <div class="network-card__top">
+                <span class="network-card__num">04</span>
+                <span class="network-card__badge" data-i18n="eco_tab_4">Innovation</span>
+              </div>
+              <h3 data-i18n="node_innovation">Innovation</h3>
+              <p data-i18n="node_desc_innovation">Exploring digital dentistry, new technologies, and modern clinical methods shaping tomorrow.</p>
+              <div class="network-card__footer">
+                <span class="network-card__tag">✦ Technology</span>
+                <span class="network-card__arrow">→</span>
+              </div>
+            </article>
+
+            <article class="network-card" data-network-card="conference">
+              <div class="network-card__top">
+                <span class="network-card__num">05</span>
+                <span class="network-card__badge" data-i18n="eco_tab_5">Conference</span>
+              </div>
+              <h3 data-i18n="node_conference">Conference</h3>
+              <p data-i18n="node_desc_conference">The defining annual gathering in Tripoli connecting local talent with global dental leadership.</p>
+              <div class="network-card__footer">
+                <span class="network-card__tag">✦ Annual Event</span>
+                <span class="network-card__arrow">→</span>
+              </div>
+            </article>
+
+            <article class="network-card" data-network-card="partnerships">
+              <div class="network-card__top">
+                <span class="network-card__num">06</span>
+                <span class="network-card__badge" data-i18n="eco_tab_6">Partnerships</span>
+              </div>
+              <h3 data-i18n="node_partnerships">Partnerships</h3>
+              <p data-i18n="node_desc_partnerships">Strategic collaborations with universities, student unions, and educational academies.</p>
+              <div class="network-card__footer">
+                <span class="network-card__tag">✦ Synergy</span>
+                <span class="network-card__arrow">→</span>
+              </div>
+            </article>
+          </div>
+        </div>
       </section>
-
-
 
       <!-- Supervision Section -->
       <section class="supervision section" aria-labelledby="supervision-heading">
@@ -452,9 +542,9 @@
         <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
         <span data-i18n="dock_home">Home</span>
       </a>
-      <a class="dock-item" href="#about" data-dock-link="about" aria-label="About">
-        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
-        <span data-i18n="header_about">About</span>
+      <a class="dock-item" href="#ecosystem" data-dock-link="ecosystem" aria-label="Ecosystem">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+        <span data-i18n="dock_network">Network</span>
       </a>
       <a class="dock-item" href="#conference" data-dock-link="conference" aria-label="Conference">
         <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
