@@ -335,6 +335,44 @@ html[dir="rtl"] .network-card:hover .network-card__arrow {
   transform: translateX(-4px);
 }
 
+@media (max-width: 1024px) {
+  .network-bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 660px) {
+  .network-bento {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 14px;
+    margin-top: 24px;
+    padding: 8px 4px 20px;
+    scrollbar-width: none;
+  }
+  .network-bento::-webkit-scrollbar {
+    display: none;
+  }
+  .network-card {
+    flex: 0 0 clamp(260px, 80vw, 320px);
+    scroll-snap-align: center;
+    min-height: 210px;
+    padding: 22px 20px;
+    border-radius: 20px;
+  }
+  .network-card h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  .network-card p {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+}
+
 /* Supervision & Partner */
 .supervision { background: var(--white); color: var(--royal); }
 .supervision__layout { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(48px, 9vw, 160px); }
