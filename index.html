@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300..900&family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=13" />
+    <link rel="stylesheet" href="styles.css?v=14" />
   </head>
   <body>
     <a class="skip-link" href="#main" data-i18n="skip_link">Skip to content</a>
@@ -28,7 +28,6 @@
 
       <nav class="desktop-nav" aria-label="Primary navigation">
         <a href="#about" data-nav-link="about" data-i18n="header_about">About</a>
-        <a href="#ecosystem" data-nav-link="ecosystem" data-i18n="header_ecosystem">Ecosystem</a>
         <a href="#conference" data-nav-link="conference" data-i18n="header_conference">Conference</a>
         <a href="#community" data-nav-link="community" data-i18n="header_community">Community</a>
       </nav>
@@ -64,9 +63,8 @@
       </div>
       <div class="mobile-nav__links">
         <a href="#about"><span data-i18n="header_about">About</span><small>01</small></a>
-        <a href="#ecosystem"><span data-i18n="header_ecosystem">Ecosystem</span><small>02</small></a>
-        <a href="#conference"><span data-i18n="header_conference">Conference</span><small>03</small></a>
-        <a href="#community"><span data-i18n="header_community">Community</span><small>04</small></a>
+        <a href="#conference"><span data-i18n="header_conference">Conference</span><small>02</small></a>
+        <a href="#community"><span data-i18n="header_community">Community</span><small>03</small></a>
         <a href="#join" class="mobile-nav__cta"><span data-i18n="header_join">Join DENOVA</span><span aria-hidden="true">↗</span></a>
       </div>
       <div class="mobile-nav__footer">
@@ -111,7 +109,7 @@
             <p class="section-label" data-i18n="about_label">The platform</p>
             <h2 id="about-heading" data-i18n="about_title">What is<br /><em>DENOVA?</em></h2>
             <p class="body-copy" data-i18n="about_copy">A modern dental platform dedicated to education, collaboration, innovation, and scientific growth. DENOVA brings ambitious minds into one progressive space — where knowledge is exchanged, possibilities are examined, and better standards emerge.</p>
-            <a class="text-link" href="#ecosystem" data-i18n="about_link">Discover our ecosystem <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="#conference" data-i18n="about_link">Discover Annual Conference <span aria-hidden="true">→</span></a>
           </div>
           <div class="about__visual" aria-label="Abstract illustration of connected innovation systems" data-reveal>
             <div class="orbital-system">
@@ -130,58 +128,7 @@
         </div>
       </section>
 
-      <!-- Ecosystem Section -->
-      <section class="ecosystem section" id="ecosystem" aria-labelledby="ecosystem-heading">
-        <div class="page-width">
-          <div class="section-heading" data-reveal>
-            <p class="section-label" data-i18n="ecosystem_label">A connected platform</p>
-            <h2 id="ecosystem-heading" data-i18n="ecosystem_title">One forum.<br />A living <em>ecosystem.</em></h2>
-            <p class="body-copy" data-i18n="ecosystem_copy">Every part of DENOVA is designed to strengthen the others. Select a node to explore the network.</p>
-          </div>
 
-          <!-- Mobile Node Switcher Tabs -->
-          <div class="ecosystem-mobile-tabs" data-reveal aria-label="Ecosystem categories">
-            <button class="eco-tab is-active" type="button" data-node-trigger="community"><span data-i18n="eco_tab_1">01 Community</span></button>
-            <button class="eco-tab" type="button" data-node-trigger="education"><span data-i18n="eco_tab_2">02 Education</span></button>
-            <button class="eco-tab" type="button" data-node-trigger="research"><span data-i18n="eco_tab_3">03 Research</span></button>
-            <button class="eco-tab" type="button" data-node-trigger="innovation"><span data-i18n="eco_tab_4">04 Innovation</span></button>
-            <button class="eco-tab" type="button" data-node-trigger="conference"><span data-i18n="eco_tab_5">05 Conference</span></button>
-            <button class="eco-tab" type="button" data-node-trigger="partnerships"><span data-i18n="eco_tab_6">06 Partnerships</span></button>
-          </div>
-
-          <div class="ecosystem__field" data-reveal>
-            <svg class="network-lines" viewBox="0 0 1000 620" role="presentation" aria-hidden="true">
-              <path d="M502 304 L170 144 M502 304 L477 70 M502 304 L825 143 M502 304 L858 430 M502 304 L510 550 M502 304 L144 456" />
-              <path d="M170 144 C295 40 641 24 825 143 M825 143 C948 234 931 354 858 430 M858 430 C713 577 628 586 510 550 M510 550 C301 591 184 540 144 456 M144 456 C65 340 86 231 170 144" />
-            </svg>
-            <button class="ecosystem-node ecosystem-node--community is-active" type="button" aria-pressed="true" data-node="community" style="--x:17%; --y:23%"><span>01</span><strong data-i18n="node_community">Community</strong></button>
-            <button class="ecosystem-node ecosystem-node--education" type="button" aria-pressed="false" data-node="education" style="--x:48%; --y:7%"><span>02</span><strong data-i18n="node_education">Education</strong></button>
-            <button class="ecosystem-node ecosystem-node--research" type="button" aria-pressed="false" data-node="research" style="--x:82%; --y:23%"><span>03</span><strong data-i18n="node_research">Research</strong></button>
-            <button class="ecosystem-node ecosystem-node--innovation" type="button" aria-pressed="false" data-node="innovation" style="--x:86%; --y:70%"><span>04</span><strong data-i18n="node_innovation">Innovation</strong></button>
-            <button class="ecosystem-node ecosystem-node--conference" type="button" aria-pressed="false" data-node="conference" style="--x:51%; --y:88%"><span>05</span><strong data-i18n="node_conference">Conference</strong></button>
-            <button class="ecosystem-node ecosystem-node--partnerships" type="button" aria-pressed="false" data-node="partnerships" style="--x:15%; --y:74%"><span>06</span><strong data-i18n="node_partnerships">Partnerships</strong></button>
-            
-            <div class="ecosystem-core" aria-label="DENOVA">
-              <span class="brand-mark brand-mark--core" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-              <strong>DENOVA</strong>
-              <small data-i18n="brand_subtitle">Dental Innovation Forum</small>
-            </div>
-            
-            <div class="node-reading" aria-live="polite" data-node-reading>
-              <div class="node-reading__head">
-                <span class="node-reading__index">01 / 06</span>
-                <span class="node-reading__status"><i></i><b data-i18n="status_active">Active Node</b></span>
-              </div>
-              <h3 data-i18n="node_community">Community</h3>
-              <p data-i18n="node_desc_community">A shared ground for students, educators and professionals to exchange perspective and move the profession forward.</p>
-              <div class="node-reading__action">
-                <span data-i18n="node_explore_hint">Interactive Node</span>
-                <span aria-hidden="true" class="node-reading__arrow">→</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <!-- Supervision Section -->
       <section class="supervision section" aria-labelledby="supervision-heading">
@@ -505,9 +452,9 @@
         <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
         <span data-i18n="dock_home">Home</span>
       </a>
-      <a class="dock-item" href="#ecosystem" data-dock-link="ecosystem" aria-label="Ecosystem">
-        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-        <span data-i18n="dock_network">Network</span>
+      <a class="dock-item" href="#about" data-dock-link="about" aria-label="About">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+        <span data-i18n="header_about">About</span>
       </a>
       <a class="dock-item" href="#conference" data-dock-link="conference" aria-label="Conference">
         <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
