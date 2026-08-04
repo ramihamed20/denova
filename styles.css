@@ -367,46 +367,70 @@ html[dir="rtl"] .ecosystem-node {
   text-shadow: 0 0 10px rgba(0, 214, 190, 0.6);
 }
 
-/* Ecosystem Central Core */
+/* Futuristic Holographic Ecosystem Core Orb */
 .ecosystem-core {
   position: absolute;
   z-index: 3;
   top: 50%;
   left: 50%;
   display: flex;
-  width: 145px;
+  width: 160px;
   aspect-ratio: 1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(0, 214, 190, 0.6);
+  border: 1.5px solid rgba(0, 214, 190, 0.7);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(50, 19, 93, 0.98), rgba(19, 8, 36, 0.95));
+  background: radial-gradient(circle at 35% 35%, rgba(0, 214, 190, 0.35), rgba(75, 35, 123, 0.95) 55%, rgba(19, 8, 36, 0.98) 100%);
+  backdrop-filter: blur(20px);
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 40px rgba(0, 214, 190, 0.3), inset 0 0 20px rgba(0, 214, 190, 0.2);
+  box-shadow: 0 0 60px rgba(0, 214, 190, 0.45), 0 0 100px rgba(75, 35, 123, 0.5), inset 0 0 30px rgba(0, 214, 190, 0.3);
   transition: transform 0.4s var(--ease-spring);
 }
 
 .ecosystem-core::before {
   content: '';
   position: absolute;
-  inset: -9px;
-  border: 1px dashed rgba(216, 166, 82, 0.4);
+  inset: -14px;
+  border: 1.5px dashed rgba(216, 166, 82, 0.6);
   border-radius: 50%;
-  animation: line-flow 30s linear infinite;
+  animation: core-spin 25s linear infinite;
+  box-shadow: 0 0 20px rgba(216, 166, 82, 0.2);
+}
+
+.ecosystem-core::after {
+  content: '';
+  position: absolute;
+  inset: -28px;
+  border: 1px solid rgba(0, 214, 190, 0.25);
+  border-radius: 50%;
+  animation: pulse-glow 3s ease-in-out infinite alternate;
 }
 
 .ecosystem-core strong {
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
   color: #ffffff;
-  margin-top: 4px;
+  margin-top: 6px;
+  text-shadow: 0 0 12px rgba(0, 214, 190, 0.8);
 }
 
 .ecosystem-core small {
+  color: var(--gold-light);
   font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 2px;
+  opacity: 0.9;
 }
+
+@keyframes core-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 
 /* Compact Floating Detail Card Widget */
 .node-reading {
