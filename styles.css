@@ -649,7 +649,7 @@ body.menu-open .mobile-dock {
 .hero {
   position: relative;
   display: flex;
-  min-height: max(760px, 100svh);
+  min-height: auto;
   align-items: center;
   overflow: hidden;
   background: radial-gradient(ellipse 85% 75% at 86% 48%, #4d267f 0%, #30145d 35%, var(--royal) 63%, var(--royal-deep) 100%);
@@ -695,11 +695,11 @@ body.menu-open .mobile-dock {
   position: relative;
   z-index: 1;
   display: flex;
-  min-height: max(760px, 100svh);
+  min-height: auto;
   flex-direction: column;
   justify-content: center;
-  padding-top: calc(140px + var(--sat));
-  padding-bottom: 70px;
+  padding-top: calc(120px + var(--sat));
+  padding-bottom: clamp(40px, 6vh, 60px);
 }
 
 .hero__identity {
@@ -782,7 +782,7 @@ h1 {
 
 @media (max-width: 768px) {
   .hero__actions {
-    margin-top: 55px;
+    margin-top: 24px;
   }
 }
 
