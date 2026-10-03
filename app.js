@@ -814,25 +814,25 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       originalAspect: '4:3 Standard'
     },
-    {
-      id: 'contrib-y4-1',
+    ...Array.from({ length: 6 }, (_, index) => ({
+      id: `contrib-y4-${index + 1}`,
       category: 'year4',
       subCategory: '',
-      src: 'assets/contributions/year4-surgery.jpg',
+      src: `assets/contributions/year4-clinical-${String(index + 1).padStart(2, '0')}.jpg`,
       categoryName: {
         en: '4th Year Contributions',
         ar: 'مشاركات السنة الرابعة'
       },
       title: {
-        en: 'Oral Surgery & Clinical Dental Practice',
-        ar: 'جراحة الفم والممارسة السريرية المتقدمة'
+        en: 'Clinical Dental Practice',
+        ar: 'الممارسة السريرية لطب الأسنان'
       },
       caption: {
-        en: 'Fourth-year senior dental students conducting comprehensive diagnosis and minor oral surgical procedures.',
-        ar: 'مشاركات طلبة السنة الرابعة في العيادات السريرية، التشخيص الشامل، وإجراءات جراحة الفم الصغرى.'
+        en: 'Fourth-year dental students providing supervised patient care in the university clinic.',
+        ar: 'طلبة السنة الرابعة يقدمون الرعاية السنية للمرضى بإشراف سريري في عيادات الجامعة.'
       },
-      originalAspect: '3:4 Portrait'
-    },
+      originalAspect: '4:3 Landscape'
+    })),
     {
       id: 'contrib-intern-1',
       category: 'interns',
