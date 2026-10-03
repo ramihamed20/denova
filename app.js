@@ -795,6 +795,25 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       originalAspect: '4:3 Landscape'
     },
+    ...Array.from({ length: 4 }, (_, index) => ({
+      id: `contrib-y2-new-${index + 1}`,
+      category: 'year2',
+      subCategory: '',
+      src: `assets/contributions/year2-clinical-new-${String(index + 1).padStart(2, '0')}.jpg`,
+      categoryName: {
+        en: '2nd Year Contributions',
+        ar: 'مشاركات السنة الثانية'
+      },
+      title: {
+        en: 'Pre-clinical Dental Training',
+        ar: 'التدريب العملي ما قبل السريري'
+      },
+      caption: {
+        en: 'Second-year dental students practicing on phantom models and taking part in pre-clinical training.',
+        ar: 'طلبة السنة الثانية يتدربون على مجسمات المحاكاة ويشاركون في التدريب العملي ما قبل السريري.'
+      },
+      originalAspect: '4:3 Landscape'
+    })),
     ...Array.from({ length: 6 }, (_, index) => ({
       id: `contrib-y3-${index + 1}`,
       category: 'year3',
