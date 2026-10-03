@@ -795,25 +795,25 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       originalAspect: '4:3 Landscape'
     },
-    {
-      id: 'contrib-y3-1',
+    ...Array.from({ length: 6 }, (_, index) => ({
+      id: `contrib-y3-${index + 1}`,
       category: 'year3',
       subCategory: '',
-      src: 'assets/contributions/year3-prostho.jpg',
+      src: `assets/contributions/year3-clinical-${String(index + 1).padStart(2, '0')}.jpg`,
       categoryName: {
         en: '3rd Year Contributions',
         ar: 'مشاركات السنة الثالثة'
       },
       title: {
-        en: 'Fixed Prosthodontics & Endodontic Training',
-        ar: 'الاستعاضة الصناعية الثابتة وعلاج جذور الأسنان'
+        en: 'Clinical Practice & Academic Activities',
+        ar: 'التدريب السريري والأنشطة الأكاديمية'
       },
       caption: {
-        en: 'Third-year students training on complex fixed prosthodontics and rotary endodontic instrumentation.',
-        ar: 'مشاركات وأعمال طلبة السنة الثالثة في تركيبات الأسنان الثابتة والمعالجة اللبية المتقدمة للأسنان.'
+        en: 'Third-year dental students taking part in practical training and academic activities.',
+        ar: 'طلبة السنة الثالثة يشاركون في التدريب العملي والأنشطة الأكاديمية.'
       },
-      originalAspect: '4:3 Standard'
-    },
+      originalAspect: '4:3 Landscape'
+    })),
     ...Array.from({ length: 6 }, (_, index) => ({
       id: `contrib-y4-${index + 1}`,
       category: 'year4',
