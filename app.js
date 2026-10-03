@@ -147,6 +147,24 @@ document.addEventListener('DOMContentLoaded', () => {
       toast_like: 'Appreciated case discussion!',
       toast_submitted: 'Clinical case submitted successfully!',
       toast_registered: 'Registration request sent! Check your email.',
+      header_contributions: 'Contributions',
+      contributions_label: '✦ Academic & Community Showcase',
+      contributions_title: 'DeNova<br /><em>Contributions</em>',
+      contributions_copy: 'A dedicated showcase of dental students’ creative academic work, clinical models, graduation projects, and active participation in university and community forums.',
+      contrib_tab_all: 'All Showcase',
+      contrib_tab_year1: '1st Year',
+      contrib_tab_year2: '2nd Year',
+      contrib_tab_year3: '3rd Year',
+      contrib_tab_year4: '4th Year',
+      contrib_tab_interns: 'Interns & Graduates',
+      contrib_tab_misc: 'Miscellaneous',
+      contrib_sub_label: 'Filter:',
+      contrib_sub_all_misc: 'All',
+      contrib_sub_national_day: 'National University Day',
+      contrib_empty_title: 'Coming Soon',
+      contrib_empty: 'More photos and clinical achievements will be added to this category soon.',
+      lightbox_hint: 'Use Arrow keys or swipe to navigate · Esc to close',
+      contrib_view_btn: 'View details ↗',
       status_active: 'Active Node',
       node_explore_hint: 'Interactive Node',
     },
@@ -292,6 +310,24 @@ document.addEventListener('DOMContentLoaded', () => {
       toast_like: 'تمت إضافة إعجابك بالحالة السريرية!',
       toast_submitted: 'تم إرسال الحالة السريرية بنجاح!',
       toast_registered: 'تم استلام طلب التسجيل! يرجى مراجعة بريدك.',
+      header_contributions: 'مشاركات دينوفا',
+      contributions_label: '✦ إبداعات المجتمع الأكاديمي',
+      contributions_title: 'مشاركات<br /><em>دينوفا</em>',
+      contributions_copy: 'مساحة مخصصة تستعرض إبداعات وأعمال طلبة طب وجراحة الفم والأسنان، المجسمات السريرية، مشاريع الخريجين، ومشاركاتهم الفعالة في الفعاليات والملتقيات الجامعية.',
+      contrib_tab_all: 'الكل',
+      contrib_tab_year1: 'مشاركات السنة الأولى',
+      contrib_tab_year2: 'مشاركات السنة الثانية',
+      contrib_tab_year3: 'مشاركات السنة الثالثة',
+      contrib_tab_year4: 'مشاركات السنة الرابعة',
+      contrib_tab_interns: 'طلبة الامتياز والخريجين',
+      contrib_tab_misc: 'مشاركات متنوعة',
+      contrib_sub_label: 'تصفية:',
+      contrib_sub_all_misc: 'الكل',
+      contrib_sub_national_day: 'اليوم الوطني للجامعات',
+      contrib_empty_title: 'قريبًا',
+      contrib_empty: 'سيتم إضافة المزيد من الصور والإنجازات السريرية لهذا القسم قريبًا.',
+      lightbox_hint: 'استخدم مفاتيح الأسهم أو اسحب للتنقل · Esc للإغلاق',
+      contrib_view_btn: 'عرض التفاصيل ↖',
       status_active: 'عنصر نشط',
       node_explore_hint: 'اضغط لتصفح العنصر',
     },
@@ -346,6 +382,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update current active Ecosystem node text
     const activeNode = document.querySelector('[data-node].is-active')?.dataset.node || 'community';
     updateNodeReading(activeNode);
+
+    // Update DeNova Contributions gallery and Lightbox on language change
+    if (typeof renderContributions === 'function') {
+      if (typeof updateContribCounts === 'function') updateContribCounts();
+      renderContributions();
+      if (typeof updateLightboxContent === 'function' && document.getElementById('contrib-lightbox')?.classList.contains('is-open')) {
+        updateLightboxContent();
+      }
+    }
   };
 
   document.querySelectorAll('[data-lang-toggle]').forEach((btn) => {
@@ -655,7 +700,586 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sections.forEach((section) => sectionObserver.observe(section));
 
-  // Initial Language Setup
+  // ==========================================================================
+  // 11. DeNova Contributions Gallery & Lightbox Viewer Controller
+  // Easily extendable dataset: User can simply add new photo entries here or in assets/contributions/
+  // ==========================================================================
+  const contributionsData = [
+    {
+      id: 'contrib-y1-1',
+      category: 'year1',
+      subCategory: '',
+      src: 'assets/contributions/year1-anatomy.jpg',
+      categoryName: {
+        en: '1st Year Contributions',
+        ar: 'مشاركات السنة الأولى'
+      },
+      title: {
+        en: 'Dental Anatomy & Wax Carving Models',
+        ar: 'تشريح الأسنان ونمذجة الشمع اليدوية'
+      },
+      caption: {
+        en: 'First-year dental students demonstrating anatomical tooth morphology and precision wax carving in the simulation lab.',
+        ar: 'أعمال وتطبيقات طلبة السنة الأولى في مادة تشريح الأسنان ونحت تضاريس الأسنان بالشمع المخبري بدقة عالية.'
+      },
+      originalAspect: '3:4 Portrait'
+    },
+    {
+      id: 'contrib-y2-1',
+      category: 'year2',
+      subCategory: '',
+      src: 'assets/contributions/year2-lab.jpg',
+      categoryName: {
+        en: '2nd Year Contributions',
+        ar: 'مشاركات السنة الثانية'
+      },
+      title: {
+        en: 'Pre-clinical Simulation & Phantom Heads',
+        ar: 'التدريب ما قبل السريري ومحاكاة الرؤوس الوهمية'
+      },
+      caption: {
+        en: 'Second-year students performing cavity preparation and restorative techniques on phantom simulation units.',
+        ar: 'تطبيقات عملية لطلبة السنة الثانية على وحدات المحاكاة والرؤوس الوهمية للتحضيرات السنية والحشوات التجميلية.'
+      },
+      originalAspect: '4:3 Standard'
+    },
+    {
+      id: 'contrib-y2-2',
+      category: 'year2',
+      subCategory: '',
+      src: 'assets/contributions/year2-clinical-practice-01.png',
+      categoryName: { en: '2nd Year Contributions', ar: 'مشاركات السنة الثانية' },
+      title: { en: 'Hands-on Training in the Simulation Lab', ar: 'تدريب عملي في معمل المحاكاة' },
+      caption: {
+        en: 'A second-year student practices dental procedures on a simulation model in the university lab.',
+        ar: 'تتدرب طالبة من السنة الثانية على الإجراءات السنية باستخدام مجسم المحاكاة داخل معمل الكلية.'
+      },
+      originalAspect: '4:3 Landscape'
+    },
+    {
+      id: 'contrib-y2-3',
+      category: 'year2',
+      subCategory: '',
+      src: 'assets/contributions/year2-clinical-practice-02.png',
+      categoryName: { en: '2nd Year Contributions', ar: 'مشاركات السنة الثانية' },
+      title: { en: 'Pre-clinical Simulation Lab', ar: 'معمل المحاكاة ما قبل السريري' },
+      caption: {
+        en: 'Dental students work at phantom-head simulation units during practical training.',
+        ar: 'طلبة طب الأسنان يتدربون على وحدات محاكاة الرؤوس الوهمية خلال التطبيق العملي.'
+      },
+      originalAspect: '4:3 Landscape'
+    },
+    {
+      id: 'contrib-y2-4',
+      category: 'year2',
+      subCategory: '',
+      src: 'assets/contributions/year2-clinical-practice-03.png',
+      categoryName: { en: '2nd Year Contributions', ar: 'مشاركات السنة الثانية' },
+      title: { en: 'Practicing on Phantom Models', ar: 'تطبيق عملي على مجسمات الأسنان' },
+      caption: {
+        en: 'A second-year student develops practical skills using dental instruments and a phantom model.',
+        ar: 'تطور طالبة من السنة الثانية مهاراتها العملية باستخدام أدوات الأسنان ومجسم المحاكاة.'
+      },
+      originalAspect: '4:3 Landscape'
+    },
+    {
+      id: 'contrib-y2-5',
+      category: 'year2',
+      subCategory: '',
+      src: 'assets/contributions/year2-clinical-practice-04.png',
+      categoryName: { en: '2nd Year Contributions', ar: 'مشاركات السنة الثانية' },
+      title: { en: 'Dental Instrument Skills Practice', ar: 'تدريب على استخدام أدوات الأسنان' },
+      caption: {
+        en: 'Close-up of practical instrument work on a dental phantom model during pre-clinical training.',
+        ar: 'لقطة مقربة للتدريب العملي على مجسم الأسنان باستخدام أدوات طب الأسنان.'
+      },
+      originalAspect: '4:3 Landscape'
+    },
+    {
+      id: 'contrib-y3-1',
+      category: 'year3',
+      subCategory: '',
+      src: 'assets/contributions/year3-prostho.jpg',
+      categoryName: {
+        en: '3rd Year Contributions',
+        ar: 'مشاركات السنة الثالثة'
+      },
+      title: {
+        en: 'Fixed Prosthodontics & Endodontic Training',
+        ar: 'الاستعاضة الصناعية الثابتة وعلاج جذور الأسنان'
+      },
+      caption: {
+        en: 'Third-year students training on complex fixed prosthodontics and rotary endodontic instrumentation.',
+        ar: 'مشاركات وأعمال طلبة السنة الثالثة في تركيبات الأسنان الثابتة والمعالجة اللبية المتقدمة للأسنان.'
+      },
+      originalAspect: '4:3 Standard'
+    },
+    {
+      id: 'contrib-y4-1',
+      category: 'year4',
+      subCategory: '',
+      src: 'assets/contributions/year4-surgery.jpg',
+      categoryName: {
+        en: '4th Year Contributions',
+        ar: 'مشاركات السنة الرابعة'
+      },
+      title: {
+        en: 'Oral Surgery & Clinical Dental Practice',
+        ar: 'جراحة الفم والممارسة السريرية المتقدمة'
+      },
+      caption: {
+        en: 'Fourth-year senior dental students conducting comprehensive diagnosis and minor oral surgical procedures.',
+        ar: 'مشاركات طلبة السنة الرابعة في العيادات السريرية، التشخيص الشامل، وإجراءات جراحة الفم الصغرى.'
+      },
+      originalAspect: '3:4 Portrait'
+    },
+    {
+      id: 'contrib-intern-1',
+      category: 'interns',
+      subCategory: '',
+      src: 'assets/contributions/interns-clinical.jpg',
+      categoryName: {
+        en: 'Interns & Graduates',
+        ar: 'طلبة الامتياز والخريجين'
+      },
+      title: {
+        en: 'Comprehensive Multidisciplinary Rehabilitation',
+        ar: 'إعادة التأهيل الفموي الشامل لحديثي التخرج'
+      },
+      caption: {
+        en: 'Clinical presentations by dental interns highlighting advanced multidisciplinary patient rehabilitation and case documentation.',
+        ar: 'حالات سريرية متميزة موثقة من أطباء الامتياز والخريجين تعكس مهارات العلاج التكاملي والتوثيق الأكاديمي.'
+      },
+      originalAspect: '4:3 Standard'
+    },
+    {
+      id: 'contrib-intern-2',
+      category: 'interns',
+      subCategory: '',
+      src: 'assets/contributions/national_day_07_graduates.jpg',
+      categoryName: {
+        en: 'Interns & Graduates',
+        ar: 'طلبة الامتياز والخريجين'
+      },
+      title: {
+        en: 'Doctor of the Future — Official Graduation Regalia',
+        ar: 'طبيب المستقبل — روب ووشاح تخرج كلية طب الأسنان'
+      },
+      caption: {
+        en: 'Official graduation ceremonial gown and sash for the Faculty of Dentistry graduates at University of Tripoli.',
+        ar: 'روب ووشاح التخرج الرسمي لطلبة كلية طب وجراحة الفم والأسنان - جامعة طرابلس (طبيب المستقبل).'
+      },
+      originalAspect: '3:4 Portrait'
+    },
+    {
+      id: 'contrib-misc-nd-1',
+      category: 'misc',
+      subCategory: 'national_day',
+      src: 'assets/contributions/national_day_01_brand.jpg',
+      categoryName: {
+        en: 'National University Day',
+        ar: 'اليوم الوطني للجامعات'
+      },
+      title: {
+        en: 'Official Participation Identity — Dental Student Union',
+        ar: 'الشعار الرسمي — اتحاد طلبة كلية طب الأسنان'
+      },
+      caption: {
+        en: 'Official participation emblem and sponsors showcase for the Faculty of Dentistry Student Union at University of Tripoli.',
+        ar: 'اللوحة الرسمية وشعارات الرعاة لمشاركة اتحاد طلبة كلية طب وجراحة الفم والأسنان بجامعة طرابلس في اليوم الوطني للجامعات.'
+      },
+      originalAspect: '4:3 Landscape'
+    },
+    {
+      id: 'contrib-misc-nd-2',
+      category: 'misc',
+      subCategory: 'national_day',
+      src: 'assets/contributions/national_day_02_booth.jpg',
+      categoryName: {
+        en: 'National University Day',
+        ar: 'اليوم الوطني للجامعات'
+      },
+      title: {
+        en: 'Faculty of Dentistry Exhibition Pavilion',
+        ar: 'جناح كلية طب وجراحة الفم والأسنان'
+      },
+      caption: {
+        en: 'Comprehensive interactive dental exhibition booth featuring clinical dental unit, phantom models, and academic scientific posters.',
+        ar: 'تجهيزات جناح الكلية المتكامل بالمعرض بما يشمل وحدة عيادة الأسنان، شاشة العرض، مجسمات الرؤوس الوهمية والبوسترات العلمية.'
+      },
+      originalAspect: '4:3 Landscape'
+    },
+    {
+      id: 'contrib-misc-nd-3',
+      category: 'misc',
+      subCategory: 'national_day',
+      src: 'assets/contributions/national_day_03_vip_visit.jpg',
+      categoryName: {
+        en: 'National University Day',
+        ar: 'اليوم الوطني للجامعات'
+      },
+      title: {
+        en: 'VIP Delegation Visit to Dental Pavilion',
+        ar: 'زيارة الضيوف والمسؤولين لجناح الكلية'
+      },
+      caption: {
+        en: 'Welcoming university leadership and visiting dignitaries, presenting student clinical models and educational initiatives.',
+        ar: 'استقبال وفود المسؤولين والضيوف وإطلاعهم على المشاريع الطلابية والمبادرات الأكاديمية لكلية طب وجراحة الفم والأسنان.'
+      },
+      originalAspect: '4:3 Landscape'
+    },
+    {
+      id: 'contrib-misc-nd-4',
+      category: 'misc',
+      subCategory: 'national_day',
+      src: 'assets/contributions/national_day_04_team.jpg',
+      categoryName: {
+        en: 'National University Day',
+        ar: 'اليوم الوطني للجامعات'
+      },
+      title: {
+        en: 'Dental Student Organizing Team & Union',
+        ar: 'الصورة التذكارية لفريق طلبة طب الأسنان'
+      },
+      caption: {
+        en: 'Commemorative group photograph of dental students and union committee in front of the General Union of Libyan Students official stage.',
+        ar: 'صورة جماعية تذكارية لطلبة الكلية واللجنة التنظيمية لاتحاد طلبة طب الأسنان أمام منصة الاتحاد العام لطلبة ليبيا.'
+      },
+      originalAspect: '4:3 Landscape'
+    },
+    {
+      id: 'contrib-misc-nd-5',
+      category: 'misc',
+      subCategory: 'national_day',
+      src: 'assets/contributions/national_day_05_honoring.jpg',
+      categoryName: {
+        en: 'National University Day',
+        ar: 'اليوم الوطني للجامعات'
+      },
+      title: {
+        en: 'Student Recognition & Award Ceremony',
+        ar: 'تكريم الطلبة والمشاركين بالمعرض'
+      },
+      caption: {
+        en: 'Honoring participating dental students with official certificates of appreciation for their outstanding contributions.',
+        ar: 'تكريم طلبة كلية طب وجراحة الفم والأسنان ومنحهم شهادات التقدير لتميزهم ومشاركتهم الفعالة في المعرض والملتقى الجامعي.'
+      },
+      originalAspect: '4:3 Landscape'
+    },
+    {
+      id: 'contrib-misc-nd-6',
+      category: 'misc',
+      subCategory: 'national_day',
+      src: 'assets/contributions/national_day_06_engagement.jpg',
+      categoryName: {
+        en: 'National University Day',
+        ar: 'اليوم الوطني للجامعات'
+      },
+      title: {
+        en: 'Public Engagement & Oral Health Guidance',
+        ar: 'التفاعل والتوعية السنية مع الزوار'
+      },
+      caption: {
+        en: 'Welcoming exhibition visitors and providing interactive oral healthcare guidance with passionate student engagement.',
+        ar: 'استقبال زوار المعرض وتقديم الاستشارات والتوعية بصحة الفم والأسنان بروح طلابية طموحة ومتميزة.'
+      },
+      originalAspect: '16:9 Landscape'
+    },
+    {
+      id: 'contrib-misc-nd-7',
+      category: 'misc',
+      subCategory: 'national_day',
+      src: 'assets/contributions/national_day_07_graduates.jpg',
+      categoryName: {
+        en: 'National University Day',
+        ar: 'اليوم الوطني للجامعات'
+      },
+      title: {
+        en: 'Doctor of the Future — Official Graduation Sash',
+        ar: 'وشاح طبيب المستقبل وروب التخرج'
+      },
+      caption: {
+        en: 'Official graduation regalia and ceremonial sash of the Faculty of Dentistry at University of Tripoli (Doctor of the Future).',
+        ar: 'عرض روب ووشاح التخرج الرسمي لطلبة كلية طب وجراحة الفم والأسنان - جامعة طرابلس (طبيب المستقبل).'
+      },
+      originalAspect: '3:4 Portrait'
+    }
+  ];
+
+  let currentContribFilter = 'all';
+  let currentContribSubfilter = 'all';
+  let activeLightboxItems = [];
+  let currentLightboxIndex = 0;
+
+  // Update Category Badge Counts
+  const updateContribCounts = () => {
+    const categories = ['all', 'year1', 'year2', 'year3', 'year4', 'interns', 'misc'];
+    categories.forEach((cat) => {
+      const countEl = document.querySelector(`.contrib-filter__count[data-count="${cat}"]`);
+      if (countEl) {
+        const count = cat === 'all' 
+          ? contributionsData.length 
+          : contributionsData.filter(item => item.category === cat).length;
+        countEl.textContent = String(count);
+      }
+    });
+  };
+
+  // Render Contributions Grid with Strict Uniform 4:3 Aspect Ratio
+  function renderContributions() {
+    const contribGrid = document.getElementById('contributions-grid');
+    const contribEmpty = document.getElementById('contributions-empty');
+    if (!contribGrid) return;
+
+    // Filter items
+    let items = contributionsData;
+    if (currentContribFilter !== 'all') {
+      items = items.filter(item => item.category === currentContribFilter);
+    }
+    if (currentContribFilter === 'misc' && currentContribSubfilter !== 'all') {
+      items = items.filter(item => item.subCategory === currentContribSubfilter);
+    }
+
+    // Toggle empty state
+    if (items.length === 0) {
+      contribGrid.innerHTML = '';
+      if (contribEmpty) contribEmpty.style.display = 'flex';
+      return;
+    }
+    if (contribEmpty) contribEmpty.style.display = 'none';
+
+    // Build Cards HTML with strict 4:3 frame and object-fit: cover
+    const isAr = currentLang === 'ar';
+    contribGrid.innerHTML = items.map((item, index) => {
+      const catName = isAr ? item.categoryName.ar : item.categoryName.en;
+      const title = isAr ? item.title.ar : item.title.en;
+      const caption = isAr ? item.caption.ar : item.caption.en;
+      const isGoldBadge = item.category === 'misc' || item.subCategory === 'national_day';
+
+      return `
+        <article class="contrib-card" role="button" tabindex="0" data-contrib-id="${item.id}" data-item-index="${index}" aria-label="${title}">
+          <div class="contrib-card__frame">
+            <img class="contrib-card__img" src="${item.src}" alt="${title}" loading="lazy" decoding="async" />
+            <div class="contrib-card__badge-wrap">
+              <span class="contrib-card__badge ${isGoldBadge ? 'contrib-card__badge--gold' : ''}">${catName}</span>
+            </div>
+            <div class="contrib-card__zoom-hint" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none">
+                <circle cx="11" cy="11" r="7"></circle>
+                <line x1="21" y1="21" x2="16" y2="16"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+            </div>
+          </div>
+          <div class="contrib-card__content">
+            <h3 class="contrib-card__title">${title}</h3>
+            <p class="contrib-card__caption">${caption}</p>
+            <div class="contrib-card__footer">
+              <span class="contrib-card__tag">${isAr ? '✦ مشاركة مميزة' : '✦ Featured'}</span>
+              <span class="contrib-card__view-btn">${isAr ? 'عرض التفاصيل ↖' : 'View details ↗'}</span>
+            </div>
+          </div>
+        </article>
+      `;
+    }).join('');
+
+    // Attach click listeners to cards
+    contribGrid.querySelectorAll('.contrib-card').forEach((card) => {
+      const openAction = () => {
+        const id = card.dataset.contribId;
+        // User requested: "مع إمكانية التنقل بين صور نفس القسم"
+        // We set activeLightboxItems strictly to the current active filtered category items
+        activeLightboxItems = items;
+        currentLightboxIndex = items.findIndex(item => item.id === id);
+        if (currentLightboxIndex === -1) currentLightboxIndex = 0;
+        openLightbox();
+      };
+
+      card.addEventListener('click', openAction);
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openAction();
+        }
+      });
+    });
+  }
+
+  // Filter Click Handlers
+  const filterButtons = document.querySelectorAll('[data-contrib-filter]');
+  const subfilterButtons = document.querySelectorAll('[data-contrib-subfilter]');
+  const miscSubfilters = document.getElementById('misc-subfilters');
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.contribFilter;
+      currentContribFilter = filter;
+      currentContribSubfilter = 'all';
+
+      filterButtons.forEach(b => {
+        b.classList.remove('is-active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('is-active');
+      btn.setAttribute('aria-selected', 'true');
+
+      // Show sub-filters only when 'misc' is selected
+      if (miscSubfilters) {
+        if (filter === 'misc') {
+          miscSubfilters.classList.add('is-visible');
+        } else {
+          miscSubfilters.classList.remove('is-visible');
+        }
+      }
+
+      // Reset sub-filter pill states
+      subfilterButtons.forEach(sb => {
+        sb.classList.toggle('is-active', sb.dataset.contribSubfilter === 'all');
+      });
+
+      renderContributions();
+    });
+  });
+
+  // Subfilter Click Handlers
+  subfilterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const subfilter = btn.dataset.contribSubfilter;
+      currentContribSubfilter = subfilter;
+
+      subfilterButtons.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+
+      renderContributions();
+    });
+  });
+
+  // Lightbox Controller
+  function openLightbox() {
+    const lightboxModal = document.getElementById('contrib-lightbox');
+    if (!lightboxModal || activeLightboxItems.length === 0) return;
+    updateLightboxContent();
+    lightboxModal.classList.add('is-open');
+    lightboxModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    const lightboxModal = document.getElementById('contrib-lightbox');
+    if (!lightboxModal) return;
+    lightboxModal.classList.remove('is-open');
+    lightboxModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function updateLightboxContent() {
+    if (!activeLightboxItems[currentLightboxIndex]) return;
+    const item = activeLightboxItems[currentLightboxIndex];
+    const isAr = currentLang === 'ar';
+
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCategory = document.getElementById('lightbox-category');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxCounter = document.getElementById('lightbox-counter');
+    const lightboxPrev = document.getElementById('lightbox-prev');
+    const lightboxNext = document.getElementById('lightbox-next');
+
+    if (lightboxImg) {
+      lightboxImg.classList.add('is-loading');
+      lightboxImg.src = item.src;
+      lightboxImg.alt = isAr ? item.title.ar : item.title.en;
+
+      lightboxImg.onload = () => {
+        lightboxImg.classList.remove('is-loading');
+      };
+    }
+
+    if (lightboxCategory) lightboxCategory.textContent = isAr ? item.categoryName.ar : item.categoryName.en;
+    if (lightboxTitle) lightboxTitle.textContent = isAr ? item.title.ar : item.title.en;
+    if (lightboxCaption) lightboxCaption.textContent = isAr ? item.caption.ar : item.caption.en;
+    if (lightboxCounter) {
+      lightboxCounter.textContent = `${currentLightboxIndex + 1} / ${activeLightboxItems.length}`;
+    }
+
+    // Update navigation buttons visibility
+    const hasMultiple = activeLightboxItems.length > 1;
+    if (lightboxPrev) lightboxPrev.style.display = hasMultiple ? '' : 'none';
+    if (lightboxNext) lightboxNext.style.display = hasMultiple ? '' : 'none';
+  }
+
+  function lightboxGoNext() {
+    if (activeLightboxItems.length <= 1) return;
+    currentLightboxIndex = (currentLightboxIndex + 1) % activeLightboxItems.length;
+    updateLightboxContent();
+  }
+
+  function lightboxGoPrev() {
+    if (activeLightboxItems.length <= 1) return;
+    currentLightboxIndex = (currentLightboxIndex - 1 + activeLightboxItems.length) % activeLightboxItems.length;
+    updateLightboxContent();
+  }
+
+  document.getElementById('lightbox-next')?.addEventListener('click', lightboxGoNext);
+  document.getElementById('lightbox-prev')?.addEventListener('click', lightboxGoPrev);
+
+  document.querySelectorAll('[data-lightbox-close]').forEach((btn) => {
+    btn.addEventListener('click', closeLightbox);
+  });
+
+  // Keyboard navigation for Lightbox
+  document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('contrib-lightbox');
+    if (!modal?.classList.contains('is-open')) return;
+
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      // In RTL, ArrowRight moves to previous image visually
+      if (currentLang === 'ar') {
+        lightboxGoPrev();
+      } else {
+        lightboxGoNext();
+      }
+    } else if (e.key === 'ArrowLeft') {
+      // In RTL, ArrowLeft moves to next image visually
+      if (currentLang === 'ar') {
+        lightboxGoNext();
+      } else {
+        lightboxGoPrev();
+      }
+    }
+  });
+
+  // Touch Swipe Gesture Support for Mobile
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const stageEl = document.querySelector('.contrib-lightbox__stage');
+
+  stageEl?.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  stageEl?.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchEndX - touchStartX;
+    if (Math.abs(diff) > 45) {
+      if (diff > 0) {
+        // Swiped Right
+        currentLang === 'ar' ? lightboxGoNext() : lightboxGoPrev();
+      } else {
+        // Swiped Left
+        currentLang === 'ar' ? lightboxGoPrev() : lightboxGoNext();
+      }
+    }
+  }, { passive: true });
+
+  // Initial render of Contributions
+  updateContribCounts();
+  renderContributions();
+
+  // Initial Language Setup (Run after all modules and gallery controllers are initialized)
   setLanguage(currentLang);
 
   // Dynamic Year Insertion

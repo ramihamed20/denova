@@ -13,7 +13,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300..900&family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=48" />
+  <link rel="stylesheet" href="styles.css?v=53" />
 </head>
 
 <body>
@@ -36,6 +36,7 @@
       <a href="#ecosystem" data-nav-link="ecosystem" data-i18n="header_ecosystem">Ecosystem</a>
       <a href="#conference" data-nav-link="conference" data-i18n="header_conference">Conference</a>
       <a href="#community" data-nav-link="community" data-i18n="header_community">Community</a>
+      <a href="#contributions" data-nav-link="contributions" data-i18n="header_contributions">Contributions</a>
     </nav>
 
     <!-- Language Switcher Toggle -->
@@ -72,6 +73,7 @@
       <a href="#ecosystem"><span data-i18n="header_ecosystem">Ecosystem</span><small>02</small></a>
       <a href="#conference"><span data-i18n="header_conference">Conference</span><small>03</small></a>
       <a href="#community"><span data-i18n="header_community">Community</span><small>04</small></a>
+      <a href="#contributions"><span data-i18n="header_contributions">Contributions</span><small>05</small></a>
     </div>
     <div class="mobile-nav__footer">
       <p data-i18n="mobile_footer">Dental Innovation Forum · Tripoli, Libya</p>
@@ -372,6 +374,80 @@
         </div>
       </section>
 
+      <!-- DeNova Contributions Section (مشاركات دينوفا) -->
+      <section class="contributions section" id="contributions" aria-labelledby="contributions-heading">
+        <div class="contributions-glow contributions-glow--cyan" aria-hidden="true"></div>
+        <div class="contributions-glow contributions-glow--gold" aria-hidden="true"></div>
+        
+        <div class="page-width">
+          <div class="section-heading contributions__header" data-reveal>
+            <p class="section-label section-label--cyan" data-i18n="contributions_label">✦ Academic & Community Showcase</p>
+            <h2 id="contributions-heading" data-i18n="contributions_title">DeNova<br /><em>Contributions</em></h2>
+            <p class="body-copy" data-i18n="contributions_copy">
+              A dedicated showcase of dental students’ creative academic work, clinical models, graduation projects, and active participation in university and community forums.
+            </p>
+          </div>
+
+          <!-- Category Filter Bar -->
+          <div class="contributions__filters-wrap" data-reveal>
+            <div class="contributions__filters" role="tablist" aria-label="Contributions categories">
+              <button class="contrib-filter is-active" type="button" role="tab" aria-selected="true" data-contrib-filter="all">
+                <span data-i18n="contrib_tab_all">All Showcase</span>
+                <span class="contrib-filter__count" data-count="all">0</span>
+              </button>
+              <button class="contrib-filter" type="button" role="tab" aria-selected="false" data-contrib-filter="year1">
+                <span data-i18n="contrib_tab_year1">1st Year</span>
+                <span class="contrib-filter__count" data-count="year1">0</span>
+              </button>
+              <button class="contrib-filter" type="button" role="tab" aria-selected="false" data-contrib-filter="year2">
+                <span data-i18n="contrib_tab_year2">2nd Year</span>
+                <span class="contrib-filter__count" data-count="year2">0</span>
+              </button>
+              <button class="contrib-filter" type="button" role="tab" aria-selected="false" data-contrib-filter="year3">
+                <span data-i18n="contrib_tab_year3">3rd Year</span>
+                <span class="contrib-filter__count" data-count="year3">0</span>
+              </button>
+              <button class="contrib-filter" type="button" role="tab" aria-selected="false" data-contrib-filter="year4">
+                <span data-i18n="contrib_tab_year4">4th Year</span>
+                <span class="contrib-filter__count" data-count="year4">0</span>
+              </button>
+              <button class="contrib-filter" type="button" role="tab" aria-selected="false" data-contrib-filter="interns">
+                <span data-i18n="contrib_tab_interns">Interns & Graduates</span>
+                <span class="contrib-filter__count" data-count="interns">0</span>
+              </button>
+              <button class="contrib-filter" type="button" role="tab" aria-selected="false" data-contrib-filter="misc">
+                <span data-i18n="contrib_tab_misc">Miscellaneous</span>
+                <span class="contrib-filter__count" data-count="misc">0</span>
+              </button>
+            </div>
+
+            <!-- Sub-filters (specifically for Miscellaneous: National University Day) -->
+            <div class="contributions__subfilters" id="misc-subfilters" aria-label="Miscellaneous Subcategories">
+              <span class="subfilter-label" data-i18n="contrib_sub_label">Filter:</span>
+              <button class="subfilter-pill is-active" type="button" data-contrib-subfilter="all">
+                <span data-i18n="contrib_sub_all_misc">All</span>
+              </button>
+              <button class="subfilter-pill" type="button" data-contrib-subfilter="national_day">
+                <span class="pill-dot"></span>
+                <span data-i18n="contrib_sub_national_day">National University Day</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Gallery Grid with Unified Frames -->
+          <div class="contributions__grid" id="contributions-grid" data-reveal>
+            <!-- Rendered dynamically by app.js with unified 4:3 cards and object-fit: cover -->
+          </div>
+
+          <!-- Empty State Container -->
+          <div class="contributions__empty" id="contributions-empty" style="display: none;">
+            <div class="empty-icon"><span class="brand-mark brand-mark--small"><i></i><i></i><i></i><i></i></span></div>
+            <h4 data-i18n="contrib_empty_title">Coming Soon</h4>
+            <p data-i18n="contrib_empty">More photos and clinical achievements will be added to this category soon.</p>
+          </div>
+        </div>
+      </section>
+
       <!-- Why DENOVA Section -->
       <section class="why section" aria-labelledby="why-heading">
         <div class="page-width why__header" data-reveal>
@@ -447,6 +523,7 @@
           <a href="#ecosystem" data-i18n="header_ecosystem">Ecosystem</a>
           <a href="#conference" data-i18n="header_conference">Annual Conference</a>
           <a href="#community" data-i18n="header_community">Clinical Community</a>
+          <a href="#contributions" data-i18n="header_contributions">Contributions</a>
         </div>
         <div>
           <p data-i18n="footer_col2_head">Connect</p>
@@ -592,7 +669,55 @@
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <!-- Lightbox Gallery Viewer Modal (مستعرض الصور التفاعلي لمشاركات دينوفا) -->
+  <div class="contrib-lightbox" id="contrib-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Contributions Lightbox">
+    <div class="contrib-lightbox__backdrop" data-lightbox-close></div>
+    <div class="contrib-lightbox__container">
+      <!-- Lightbox Header -->
+      <header class="contrib-lightbox__header">
+        <div class="contrib-lightbox__info">
+          <span class="contrib-lightbox__category" id="lightbox-category"></span>
+          <h3 class="contrib-lightbox__title" id="lightbox-title"></h3>
+        </div>
+        <div class="contrib-lightbox__tools">
+          <span class="contrib-lightbox__counter" id="lightbox-counter">1 / 1</span>
+          <button class="contrib-lightbox__close" type="button" aria-label="Close viewer" data-lightbox-close>
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Lightbox Main Stage -->
+      <div class="contrib-lightbox__stage">
+        <button class="contrib-lightbox__nav contrib-lightbox__prev" type="button" aria-label="Previous image" id="lightbox-prev">
+          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2.5" fill="none">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="contrib-lightbox__view" id="lightbox-view">
+          <img class="contrib-lightbox__img" id="lightbox-img" src="" alt="" />
+        </div>
+
+        <button class="contrib-lightbox__nav contrib-lightbox__next" type="button" aria-label="Next image" id="lightbox-next">
+          <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2.5" fill="none">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Lightbox Footer / Caption -->
+      <footer class="contrib-lightbox__footer">
+        <p class="contrib-lightbox__caption" id="lightbox-caption"></p>
+        <span class="contrib-lightbox__hint" data-i18n="lightbox_hint">Use Arrow keys or swipe to navigate · Esc to close</span>
+      </footer>
+    </div>
+  </div>
+
+  <script src="app.js?v=53"></script>
 </body>
 
 </html>
